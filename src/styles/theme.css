@@ -397,6 +397,33 @@ main:has(.landing) {
   cursor: pointer;
 }
 
+.header-tools .icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.icon-only {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+}
+
+.icon-only svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.icon-only .mark {
+  fill: currentColor;
+}
+
 .button.primary,
 .choice.primary,
 .icon-button[aria-pressed='true'] {
