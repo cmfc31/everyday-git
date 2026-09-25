@@ -1,0 +1,880 @@
+{
+  "ui": {
+    "primary": "Principal",
+    "home": "Inicio",
+    "lessons": "Lecciones",
+    "useLight": "Tema claro",
+    "useDark": "Tema oscuro",
+    "showCommands": "Ver comandos",
+    "hideCommands": "Ocultar comandos",
+    "commandNote": "Estos son los comandos que ejecutaría tu agente. Sin embargo, no los necesitas para terminar la lección.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyFailed": "No se pudo copiar, pero el comando sigue visible en la pantalla.",
+    "deepBackground": "Contexto amplio",
+    "backgroundNote": "Si ya conoces la idea de fondo, puedes saltarte esta parte.",
+    "skipBackground": "Esto ya lo sé",
+    "showBackground": "Ver el contexto",
+    "narrowBackground": "En esta lección",
+    "intuition": "Intuición",
+    "practice": "Pruébalo",
+    "quiz": "Quiz",
+    "quizLocked": "Primero termina la práctica de arriba; después, estas preguntas te ayudarán a repasar la idea.",
+    "questionOf": "Pregunta {current} de {total}",
+    "lessonLabel": "Lección {current} de {total}",
+    "lessonComplete": "¡Lección completa! Hiciste la práctica y, además, respondiste todas las preguntas.",
+    "forgetProgress": "Olvidar el progreso de esta lección",
+    "forgetConfirm": "¿Seguro? Se borrarán tu práctica y tus respuestas del quiz de esta lección, y tendrás que hacerlas de nuevo.",
+    "forgetYes": "Sí, olvidar",
+    "forgetCancel": "Cancelar",
+    "forgotten": "Listo: la lección quedó como nueva, así que puedes volver a practicar desde el principio.",
+    "previous": "Anterior",
+    "next": "Siguiente lección",
+    "backToPath": "Volver al recorrido",
+    "missing": "Esa lección no forma parte del recorrido."
+  },
+  "landing": {
+    "eyebrow": "Una guía interactiva para quienes empiezan a trabajar con Git",
+    "welcome": "Un curso corto sobre cómo un equipo usa Git.",
+    "welcomeBody": "Cada lección te pone frente a una situación de trabajo real y, a partir de ella, tú decides qué pedirle a tu agente de IA.",
+    "audienceTitle": "Para quién es",
+    "audience": "Este sitio es para quienes están empezando a conocer Git y GitHub. Es decir, personas que ya trabajan con control de versiones a través de un agente de IA, pero que todavía se topan con muchos conceptos y términos nuevos que quieren entender mejor.",
+    "start": "Empezar las lecciones",
+    "continue": "Seguir donde lo dejaste"
+  },
+  "learn": {
+    "eyebrow": "Ocho lecciones cortas",
+    "title": "El recorrido",
+    "intro": "Cada lección tiene cuatro partes: un contexto, una imagen que resume la idea, una escena para practicar y, al final, un quiz. Además, tu avance se guarda en este navegador.",
+    "story": "Tú y Ana trabajan en un restaurante, y el proyecto que comparten es el menú de fin de semana que ven los clientes. A lo largo de las lecciones, lo irán modificando en equipo; sin embargo, los clientes no deberían ver ningún cambio que todavía no esté listo.",
+    "finished": "¡Terminaste las ocho lecciones!",
+    "done": "Lista"
+  },
+  "viz": {
+    "local": "Tu computadora",
+    "localSub": "Tu copia local",
+    "remote": "GitHub",
+    "remoteSub": "La copia del equipo, en la nube",
+    "dropHere": "Suelta aquí",
+    "notHere": "Todavía no está aquí",
+    "commit": {
+      "published": "Menú publicado",
+      "anaTitle": "Ana: título",
+      "dessert": "Postre nuevo",
+      "price": "Precio 12 → 14",
+      "tax": "Ana: impuesto",
+      "merge": "Trae main",
+      "unfinished": "Sin terminar",
+      "noReview": "Sin revisión",
+      "perPerson": "Por persona"
+    },
+    "pull": {
+      "step1": "Trae el cambio de Ana a tu computadora",
+      "file": "Título del menú",
+      "dragInstruction": "Arrastra «{card}» desde GitHub hasta tu computadora, en el gráfico de arriba. También puedes tocar la tarjeta."
+    },
+    "branch": {
+      "step2": "Coloca el postre en el carril correcto",
+      "dragInstruction": "Arrastra el postre nuevo hasta la rama correcta, en el gráfico de arriba. También puedes tocar la rama directamente."
+    },
+    "commit_": {
+      "step1": "Elige qué archivos entran en la foto",
+      "history": "Así se verá en el historial",
+      "pending": "Tu commit",
+      "dragInstruction": "Arrastra hasta «Este commit» los archivos que deben entrar en la foto. Si te equivocas, arrástralos de vuelta; también puedes tocar un archivo para moverlo."
+    },
+    "choice": {
+      "step": "Decide el siguiente paso",
+      "behind": "Atrasada"
+    },
+    "pr": {
+      "title": "Abrir un pull request",
+      "wantsMerge": "quiere fusionarse en",
+      "step3": "Decide a dónde va la rama",
+      "open": "Abierto",
+      "draft": "Sin abrir",
+      "link": "Pull request",
+      "dragInstruction": "Arrastra la rama hasta uno de los dos destinos, o toca el destino que elijas."
+    },
+    "review": {
+      "prTitle": "Agregar el postre de fin de semana",
+      "open": "Abierto",
+      "new": "Nuevo",
+      "step2": "Coloca el commit de seguimiento",
+      "slot": "Suelta aquí el commit",
+      "commented": "comentó",
+      "you": "Tú",
+      "committed": "agregó un commit",
+      "dragInstruction": "Arrastra el commit hasta la solicitud correcta, arriba: la conversación abierta o una solicitud nueva. También puedes tocar el destino."
+    },
+    "conflict": {
+      "badge": "Conflicto",
+      "resolved": "Resuelto",
+      "yours": "Tu versión",
+      "theirs": "Versión de Ana",
+      "both": "Combinar ambas",
+      "result": "Así quedará el menú",
+      "merged": "Fusión terminada",
+      "heading": "# Especial de fin de semana"
+    },
+    "next": "Siguiente",
+    "hints": {
+      "branchChoice": "Toca lo que harías antes de editar el menú. Si eliges mal, el gráfico de arriba te mostrará qué pasaría.",
+      "choiceGraph": "Toca lo que le pedirías a tu agente y observa cómo cambia el gráfico de arriba.",
+      "agentChoice": "Toca la frase que le dirías a tu agente.",
+      "commitMessage": "Escribe un nombre corto que diga qué cambió y, luego, toca «Guardar esta foto».",
+      "conflictSentence": "Toca la oración que debe quedar. El editor de arriba te mostrará cómo quedará el menú.",
+      "prSummary": "Escribe en una oración qué cambió y por qué. Cuando termines, toca «Siguiente».",
+      "prReviewer": "Toca a la persona que debe revisar este cambio.",
+      "reviewChoice": "Lee el comentario de Ana, arriba, y toca cómo responderías."
+    }
+  },
+  "lessons": {
+    "shared": {
+      "title": "Copias del proyecto y el **pull**",
+      "summary": "Un **pull** trae a tu computadora lo que el equipo ya tiene.",
+      "deepBackground": [
+        "Tu computadora y la copia del equipo en **GitHub** no siempre coinciden. Por eso, cuando le pides a tu agente que traiga a tu computadora lo que el equipo ya tiene, esa acción se llama **pull**, y el agente la ejecuta con el comando **git pull**."
+      ],
+      "narrowBackground": [
+        "En la lección de ramas dejaste el postre en weekend-special, y **main** siguió siendo el menú que el equipo ya acordó publicar. Mientras tanto, Ana cambió main en **GitHub**. Por eso, primero vuelves a main y, si tu copia todavía muestra el menú de ayer, un **pull** la actualiza con lo que ya está en **GitHub**. Eso sí: no envía tus cambios privados."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Ana cambió el título del menú en la copia del equipo, de «Menú de fin de semana» a «Menú de fin de semana — Primavera»; sin embargo, tu copia todavía muestra el título de ayer. Por lo tanto, pedirle a tu agente que traiga ese título es hacer un **pull**: el cambio viaja hacia tu computadora, pero tú no publicas nada."
+        ],
+        "scene": "copies",
+        "sceneLabels": {
+          "leftTitle": "Copia del equipo",
+          "leftBody": "Menú de fin de semana — Primavera",
+          "rightTitle": "Tu copia",
+          "rightBody": "Menú de fin de semana"
+        }
+      },
+      "practice": {
+        "kind": "pull",
+        "intro": "El título de Ana ya está en **GitHub**, pero tu copia está desactualizada. Primero, arrastra su actualización a tu copia; luego, pídele a tu agente un **pull**.",
+        "card": "El cambio de título de Ana",
+        "from": "Copia del equipo",
+        "to": "Tu copia",
+        "yourBefore": "Menú de fin de semana",
+        "teamNow": "Menú de fin de semana — Primavera",
+        "dropHint": "Suelta aquí la actualización de Ana",
+        "ask": "¿Qué le dices a tu agente?",
+        "choices": [
+          { "id": "pull", "label": "Haz un **pull**: trae a mi copia el trabajo más reciente del equipo" },
+          { "id": "push", "label": "Envía mi copia y reemplaza el título del equipo" },
+          { "id": "branch", "label": "Empieza una rama nueva para el título" }
+        ],
+        "correct": "pull",
+        "wrong": "Eso no es un **pull**. Recuerda que un **pull** trae el título más nuevo del equipo a tu copia, y no al revés.",
+        "success": "¡Eso fue un **pull**! Tu copia se puso al día con la del equipo y, en el proceso, no publicaste nada nuevo."
+      },
+      "commands": [
+        {
+          "command": "git switch main",
+          "gloss": "Vuelve a main, la versión publicada del menú."
+        },
+        {
+          "command": "git pull",
+          "gloss": "Trae a tu copia de main el trabajo más reciente del equipo."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Tu copia muestra el título viejo, mientras que la copia del equipo muestra el título nuevo de Ana. ¿Cuál de las dos está desactualizada?",
+          "choices": ["Tu copia", "La copia del equipo", "Ya son iguales"],
+          "correct": 0,
+          "feedbackCorrect": "Exacto: estar desactualizada significa que a tu copia le falta trabajo que el equipo ya tiene.",
+          "feedbackWrong": "El título nuevo ya está en la copia del equipo; en cambio, tu copia todavía no lo recibió."
+        },
+        {
+          "prompt": "¿Qué hace un **pull**?",
+          "choices": ["Publica tus notas privadas", "Trae a tu copia el trabajo más nuevo del equipo", "Borra tu copia"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. El pull actualiza tu copia a partir de la del equipo, pero no publica tu trabajo.",
+          "feedbackWrong": "En realidad, un pull mueve el trabajo nuevo del equipo hacia ti. Por lo tanto, no publica ni borra nada."
+        },
+        {
+          "prompt": "Ana cambia el menú en GitHub mientras tú trabajas en otra cosa. ¿Tu copia se actualiza sola?",
+          "choices": ["Sí, al instante", "No, se queda igual hasta que hagas un pull", "Solo si Ana te manda un correo"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Las copias no se sincronizan solas; por eso existe el pull.",
+          "feedbackWrong": "Tu copia no cambia por su cuenta, ni por un aviso de Ana: se actualiza cuando haces un pull."
+        },
+        {
+          "prompt": "¿Cuál de estas cosas no hace un **pull**?",
+          "choices": ["Actualizar tu copia", "Publicar un trabajo que todavía no enviaste", "Usar la copia del equipo como origen"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. El pull solo lee desde el equipo, así que no publica el trabajo que aún no enviaste.",
+          "feedbackWrong": "El pull sí actualiza tu copia y, además, usa la copia del equipo como origen. Lo que no hace es publicar tus cambios sin enviar."
+        },
+        {
+          "prompt": "Después de un **pull**, ¿con qué debe coincidir el título de tu copia?",
+          "choices": ["Con lo que escribiste ayer", "Con la copia del equipo", "Con una página en blanco"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Como tu copia se puso al día, ahora el título coincide con el de la copia del equipo.",
+          "feedbackWrong": "Justamente, el objetivo del pull es que tu copia coincida con la versión más nueva del equipo."
+        }
+      ]
+    },
+    "commit": {
+      "title": "Guardar un cambio",
+      "summary": "Un **commit** es una foto con nombre de los archivos que eliges.",
+      "deepBackground": [
+        "Mientras trabajas, los archivos van cambiando en tu computadora. Un commit guarda un momento de esa historia: registra qué archivos incluiste y les pone un nombre corto que describe el cambio. De este modo, se convierte en un punto de referencia del que el equipo puede hablar más adelante.",
+        "Ahora bien, ese punto se queda en tu computadora hasta que tú decides enviarlo. En otras palabras, guardar un commit no equivale a avisarle al equipo, ni tampoco a pedir que alguien lo apruebe."
+      ],
+      "narrowBackground": [
+        "Tú eliges qué archivos entran en la foto, así que una nota privada puede quedarse afuera. Además, el nombre debe explicar qué cambió con palabras sencillas, para que mañana nadie tenga que adivinarlo."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "De vuelta en tu rama weekend-special, el precio del fin de semana pasó de 12 a 14. Al mismo tiempo, tienes una nota privada que no es para el equipo. Por eso, la foto debe incluir solo el precio, y su nombre debe decirlo claramente.",
+          "Un mensaje como \"cambios\" esconde la historia. En cambio, \"Actualizar el precio del fin de semana\" le dice de inmediato a la siguiente persona qué representa este punto."
+        ],
+        "scene": "files",
+        "sceneLabels": {
+          "price": "Precio del menú",
+          "priceDetail": "Pasó de 12 a 14",
+          "draft": "Nota privada",
+          "draftDetail": "Ideas para después, no para esta foto"
+        }
+      },
+      "practice": {
+        "kind": "commit",
+        "intro": "Mete solo el precio en el commit y luego ponle un nombre claro. La nota privada, en cambio, debe quedarse afuera.",
+        "files": [
+          { "id": "price", "label": "Precio del menú", "detail": "Pasó de 12 a 14" },
+          { "id": "draft", "label": "Nota privada", "detail": "No es para el equipo" }
+        ],
+        "tray": "Archivos cambiados",
+        "commitLabel": "Este commit",
+        "messageLabel": "Ponle nombre a esta foto",
+        "messagePlaceholder": "Actualizar el precio del fin de semana",
+        "checkLabel": "Guardar esta foto",
+        "rejectExact": ["cambios", "cambio", "actualizaciones", "actualización", "misc", "cosas", "fix", "wip"],
+        "mustIncludeAny": ["precio", "fin de semana"],
+        "minLength": 12,
+        "errors": {
+          "needPrice": "Todavía falta meter el cambio de precio en el commit.",
+          "hasDraft": "Deja la nota privada fuera de esta foto, ya que no es parte de este cambio.",
+          "short": "Explica qué cambió; para eso, usa algunas palabras más.",
+          "vague": "Un nombre como \"cambios\" no dice qué cambió. Por eso, menciona el precio.",
+          "missing": "Menciona el precio o el fin de semana, para que el nombre coincida con el cambio."
+        },
+        "success": "¡Bien! El commit guarda el precio en tu computadora. Sin embargo, Ana todavía no puede verlo."
+      },
+      "commands": [
+        {
+          "command": "git switch weekend-special",
+          "gloss": "Vuelve a tu borrador, para que el commit quede en la rama y no en main."
+        },
+        {
+          "command": "git add price.md",
+          "gloss": "Elige el archivo del precio para esta foto y deja afuera la nota."
+        },
+        {
+          "command": "git commit -m \"Update the weekend price\"",
+          "gloss": "Guarda la foto con su nombre en tu computadora."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "¿Qué es un commit?",
+          "choices": ["Lo mismo que enviarle el trabajo al equipo", "Una foto con nombre de los archivos elegidos, que todavía está en tu computadora", "La aprobación de Ana"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Un commit le pone nombre a un punto de guardado, y este sigue siendo local hasta que lo envías.",
+          "feedbackWrong": "Enviar y aprobar son pasos que vienen después. Por ahora, un commit es solo la foto local."
+        },
+        {
+          "prompt": "Después de guardar el commit, cambias el precio otra vez, de 14 a 15. ¿Qué pasa con el commit que ya guardaste?",
+          "choices": ["Se actualiza solo y ahora dice 15", "Sigue guardando el 14; para guardar el 15, haces otro commit", "Se borra, porque el archivo cambió"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Un commit es una foto de un momento: no cambia después. Cada cambio nuevo va en un commit nuevo.",
+          "feedbackWrong": "Un commit no se actualiza ni se borra solo: guarda el momento en que lo hiciste, y el 15 irá en otro commit."
+        },
+        {
+          "prompt": "¿Para qué sirve hacer varios commits pequeños en lugar de uno enorme?",
+          "choices": ["Para que la historia muestre cada cambio por separado y sea fácil de entender", "Porque Git no acepta commits con más de un archivo", "Para que el equipo reciba el trabajo sin tener que enviarlo"],
+          "correct": 0,
+          "feedbackCorrect": "Exacto. Cada commit cuenta un cambio, así que la historia se lee paso a paso.",
+          "feedbackWrong": "Git sí acepta commits con varios archivos, y ningún commit se envía solo: la ventaja es una historia clara."
+        },
+        {
+          "prompt": "¿Por qué \"cambios\" es un mal nombre para un commit?",
+          "choices": ["Porque es demasiado largo", "Porque mañana nadie podrá saber qué cambió", "Porque el agente rechaza cualquier palabra corta"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Un buen nombre dice qué cambió y, gracias a eso, la historia se puede leer con facilidad.",
+          "feedbackWrong": "El problema no es el largo, sino que \"cambios\" esconde lo que guarda esta foto."
+        },
+        {
+          "prompt": "Justo después de hacer este commit, ¿Ana ya puede ver el precio nuevo?",
+          "choices": ["Sí, porque un commit lo publica", "No, porque todavía está solo en tu computadora", "Solo si el mensaje menciona su nombre"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. El equipo ve el trabajo cuando envías la rama, y no en el momento en que haces el commit.",
+          "feedbackWrong": "Un commit no publica nada. Por lo tanto, Ana solo podrá verlo cuando envíes la rama."
+        }
+      ]
+    },
+    "branch": {
+      "title": "Un borrador del menú",
+      "summary": "Una **rama** es un borrador con un nombre personalizado, mientras que **main** sigue siendo el menú que ven los clientes.",
+      "deepBackground": [
+        "**Git** es el programa que guarda el historial del menú de fin de semana: qué cambió, quién lo hizo y cuándo. Sin embargo, no es un sitio web. **GitHub**, en cambio, es el sitio en internet donde el equipo guarda su copia de ese historial. Gracias a eso, varias personas pueden ver el mismo menú, aunque cada una también tenga su propia copia en su computadora.",
+        "Dentro de ese historial, **main** es el menú ya publicado. Por lo tanto, si lo editas directamente, los clientes verían un postre cuya receta todavía no está terminada.",
+        "Para evitar eso, puedes crear una **rama**: un borrador con un nombre personalizado de tu elección, que tiene como base ese mismo menú. En ella puedes probar el cambio, mientras **main** se mantiene igual hasta que el equipo acepte el borrador y lo **fusione** con main, es decir, hasta que sume sus cambios al menú publicado. Además, puede haber más de una rama al mismo tiempo: por ejemplo, una para el postre y otra para los precios, y cada una avanza por separado, sin afectar a las demás. Por último, al principio la rama existe solo en tu computadora, así que nadie del equipo la ve hasta que decidas compartirla."
+      ],
+      "narrowBackground": [
+        "La receta del postre nuevo todavía no está terminada, así que no puede entrar en el menú que ven los clientes. Por eso, antes de editar, empieza una **rama** y guarda ahí la receta. En esta historia, esa rama se llama weekend-special."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "**main** es el menú que verían los clientes hoy, mientras que el postre nuevo todavía es una prueba. Por eso, si editas **main** directamente, el menú publicado cambia antes de que alguien esté de acuerdo.",
+          "En cambio, si primero creas weekend-special, el postre tiene su propio borrador y, de ese modo, **main** puede quedarse como está."
+        ],
+        "scene": "lanes",
+        "sceneLabels": {
+          "main": "main",
+          "mainBody": "Menú publicado, todavía con el postre anterior",
+          "side": "weekend-special",
+          "sideBody": "El postre nuevo, que aún no está listo"
+        }
+      },
+      "practice": {
+        "kind": "branch",
+        "intro": "El postre nuevo todavía no está listo. Entonces, decide si lo pruebas en un borrador o si lo escribes directamente en el menú publicado.",
+        "ask": "¿Qué haces antes de editar?",
+        "choices": [
+          { "id": "branch", "label": "Empieza una rama y deja main como el menú publicado" },
+          { "id": "main", "label": "Edita main directamente" },
+          { "id": "push", "label": "Envía main al equipo antes de editar" }
+        ],
+        "correct": "branch",
+        "wrong": "Editar o enviar **main** cambiaría el menú que ven los clientes. Por eso, primero empieza un borrador.",
+        "started": "Perfecto: weekend-special ya es tu borrador. Ahora pon el postre nuevo ahí, y no en **main**.",
+        "card": "Postre nuevo",
+        "holding": "Trabajo por colocar",
+        "mainLane": "main",
+        "branchLane": "weekend-special",
+        "mainNote": "Menú publicado",
+        "branchNote": "Tu borrador para el trabajo sin terminar",
+        "dropWrong": "Ese es el menú publicado. En su lugar, pon el postre sin terminar en tu borrador.",
+        "needBranch": "Antes de colocar el postre, empieza la rama.",
+        "success": "¡Bien hecho! El postre nuevo está en tu rama y, mientras tanto, main sigue mostrando el menú publicado."
+      },
+      "commands": [
+        {
+          "command": "git switch -c weekend-special",
+          "gloss": "Empieza un borrador nuevo para que main siga siendo el menú publicado."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Si el postre no está listo, ¿por qué no conviene editar main directamente?",
+          "choices": ["Porque main solo puede guardar imágenes", "Porque main es el menú publicado; por lo tanto, el trabajo sin terminar cambiaría lo que el equipo considera listo", "Porque las ramas solo sirven para borrar archivos"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. main es la versión acordada, así que el trabajo sin terminar va en una rama.",
+          "feedbackWrong": "La razón es proteger el menú publicado; no tiene que ver con un límite de imágenes ni con una regla para borrar."
+        },
+        {
+          "prompt": "¿Qué es una rama?",
+          "choices": ["Una copia de la computadora de Ana", "Un borrador con un nombre personalizado, basado en el mismo menú", "El sitio web donde el equipo guarda el historial"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Una rama es un borrador con un nombre personalizado; en cambio, el sitio web donde el equipo guarda el historial es GitHub.",
+          "feedbackWrong": "Una rama no es la computadora de nadie ni un sitio web: es un borrador con un nombre personalizado dentro del historial del menú."
+        },
+        {
+          "prompt": "Quieres probar el postre nuevo y, al mismo tiempo, un cambio de precios. ¿Qué puedes hacer?",
+          "choices": ["Usar una sola rama y esperar a terminar el postre para empezar con los precios", "Crear una rama para cada cambio, y que cada una avance por separado", "Poner los precios directamente en main mientras terminas el postre"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Puede haber varias ramas a la vez, y cada una avanza sin afectar a las demás.",
+          "feedbackWrong": "No hace falta esperar ni tocar main: puedes crear otra rama, porque cada una avanza por separado."
+        },
+        {
+          "prompt": "¿Cuándo debería aparecer el postre nuevo en el menú publicado?",
+          "choices": ["En cuanto abres el archivo", "Después de que el equipo revise el borrador y lo fusione con main", "En cuanto guardas el postre en tu rama"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Guardar el postre en tu rama no cambia el menú publicado; primero el equipo lo revisa y, después, lo fusiona con main.",
+          "feedbackWrong": "Ni abrir el archivo ni guardar el postre en tu rama lo publican: main solo cambia cuando el equipo fusiona el borrador."
+        },
+        {
+          "prompt": "¿Quién elige el nombre de una rama como weekend-special?",
+          "choices": ["Git lo genera al azar", "Tú, con un nombre personalizado que describa el cambio", "Siempre tiene que llamarse main"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Tú eliges el nombre; por eso conviene que diga de qué trata el borrador.",
+          "feedbackWrong": "Git no inventa el nombre, y main ya es el menú publicado: el nombre de la rama lo eliges tú."
+        }
+      ]
+    },
+    "push": {
+      "title": "Enviar tu trabajo",
+      "summary": "Un **push** comparte tu **rama**, pero no la fusiona.",
+      "deepBackground": [
+        "Mientras un commit esté solo en tu computadora, Ana no puede verlo, ya que la copia del equipo en GitHub solo cambia cuando alguien envía trabajo ahí. Precisamente, un push es ese envío: lleva la rama desde tu computadora hasta la copia del equipo.",
+        "Por eso, la dirección importa. Un pull trae el trabajo del equipo hacia ti; un push, en cambio, envía tu trabajo hacia el equipo. Sin embargo, ninguno de los dos significa, por sí solo, que el menú publicado haya cambiado."
+      ],
+      "narrowBackground": [
+        "Por ahora, weekend-special existe solo en tu computadora, así que Ana todavía no puede abrirla. Al enviar la rama con un push, ella podrá ver tus commits. Aun así, esos commits no pasarán a main."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Ya le pusiste nombre a la foto del precio, pero esa foto sigue en tu máquina. Por eso, en la pantalla de Ana todavía no aparece la rama weekend-special. No es que te esté ignorando: simplemente, el trabajo aún no se ha enviado.",
+          "Si le pides al agente que envíe la rama, ese borrador queda compartido con el equipo. En cambio, si le pides que lo ponga en main ahora mismo, te saltarías la revisión que todavía quieres."
+        ],
+        "scene": "local",
+        "sceneLabels": {
+          "leftTitle": "Tu computadora",
+          "leftBody": "Commit: Update the weekend price",
+          "rightTitle": "Copia del equipo",
+          "rightBody": "Todavía no existe la rama weekend-special"
+        }
+      },
+      "practice": {
+        "kind": "choice",
+        "intro": "El commit existe solo en tu computadora y, por lo tanto, Ana no puede ver la rama. Elige qué pedirle a tu agente.",
+        "ask": "¿Qué debe hacer el agente?",
+        "choices": [
+          { "id": "push", "label": "Envía esta rama al equipo" },
+          { "id": "pull", "label": "Trae a mi copia el trabajo del equipo" },
+          { "id": "main", "label": "Ponlo en main ahora" }
+        ],
+        "correct": "push",
+        "wrong": "Un pull trae trabajo hacia ti, y ponerlo en main se salta la revisión. Lo que necesitas, en realidad, es enviar la rama.",
+        "picture": "local",
+        "pictureLabels": {
+          "leftTitle": "Tu computadora",
+          "leftBody": "weekend-special, solo aquí",
+          "rightTitle": "Copia del equipo",
+          "rightBody": "Ana todavía no puede ver la rama"
+        },
+        "success": "¡Enviaste la rama! Ahora el equipo puede verla y, al mismo tiempo, main no cambió."
+      },
+      "commands": [
+        {
+          "command": "git push -u origin weekend-special",
+          "gloss": "Envía tu rama a la copia del equipo, pero no la fusiona con main."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "¿En qué dirección envía el trabajo un push?",
+          "choices": ["De la copia del equipo a tu computadora", "De tu computadora a la copia del equipo", "De un comentario a una nota privada"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. El push publica tu rama hacia afuera, mientras que el pull va en la dirección contraria.",
+          "feedbackWrong": "Si el trabajo está solo en tu computadora, el push es justamente lo que lo envía al equipo."
+        },
+        {
+          "prompt": "Después de enviar weekend-special con un push, ¿quién puede ver esos commits?",
+          "choices": ["Solo tu computadora", "El equipo, en esa rama", "Todos, de inmediato, en el menú publicado"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. La rama ya está en la copia del equipo; sin embargo, main sigue siendo el menú publicado.",
+          "feedbackWrong": "El push comparte la rama, así que el trabajo deja de ser privado. Aun así, no la fusiona con main."
+        },
+        {
+          "prompt": "¿Un push aprueba un cambio en el menú publicado?",
+          "choices": ["Sí, hacer push significa que ya se fusionó", "No. El push comparte la rama, y el pull request es la forma de pedir que se fusione", "Solo los viernes"],
+          "correct": 1,
+          "feedbackCorrect": "Así es: compartir y aprobar son pasos distintos, y el push solo corresponde a compartir.",
+          "feedbackWrong": "El push no fusiona la rama con main. La aprobación, en cambio, llega después, como parte de una conversación."
+        },
+        {
+          "prompt": "Ya hiciste push de weekend-special y después agregas otro commit en tu computadora. ¿Ana puede verlo?",
+          "choices": ["Sí, el push queda activado y lo envía solo", "No, hasta que vuelvas a hacer push", "Solo si el commit está en main"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Cada push envía lo que tienes en ese momento; los commits nuevos necesitan otro push.",
+          "feedbackWrong": "El push no queda escuchando ni depende de main: los commits nuevos llegan al equipo con otro push."
+        },
+        {
+          "prompt": "Después del push, ¿cuántas copias de weekend-special existen?",
+          "choices": ["Solo la de GitHub, porque la tuya se borra", "Dos: la de tu computadora y la de GitHub", "Ninguna, porque el push la fusiona con main"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. El push copia la rama a GitHub, pero tu copia local sigue ahí.",
+          "feedbackWrong": "Tu copia no se borra ni se fusiona: después del push hay una en tu computadora y otra en GitHub."
+        }
+      ]
+    },
+    "pull-request": {
+      "title": "Pedir que se fusione el cambio",
+      "summary": "Un **pull request** es una conversación, no una sobrescritura.",
+      "deepBackground": [
+        "Una vez que la rama está en la copia del equipo, cualquiera puede revisarla. En ese momento entra el pull request, que es el pedido formal para que el equipo considere fusionar esa rama con main. Además, funciona como el hilo donde se reúnen los comentarios, las respuestas y los commits posteriores.",
+        "Sin embargo, abrir la solicitud no cambia main. Después de la conversación, alguien todavía tiene que decidir si el menú publicado debe aceptar el trabajo."
+      ],
+      "narrowBackground": [
+        "Como Ana es quien revisa este menú, tu resumen debe explicar qué cambió y por qué, para que ella no tenga que adivinarlo. Por último, la rama debe ir a \"Abrir una solicitud\" y no a \"Sobrescribir main\"."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Imagina que weekend-special avanza hacia main, pero se detiene antes y se convierte en una tarjeta de solicitud. Esa tarjeta es la conversación, mientras que main sigue intacto del otro lado.",
+          "Por ejemplo, un resumen como \"Agregar el postre de fin de semana para que el menú esté listo para revisión\" le cuenta a Ana tanto el cambio como la razón."
+        ],
+        "scene": "request",
+        "sceneLabels": {
+          "main": "main",
+          "mainBody": "Menú publicado, sin cambios",
+          "side": "Pull request",
+          "sideBody": "weekend-special está pidiendo que la fusionen"
+        }
+      },
+      "practice": {
+        "kind": "pr",
+        "intro": "Pide que se fusione weekend-special. Para eso, escribe un resumen, elige a Ana como revisora y, por último, coloca la rama en una solicitud en lugar de ponerla en main.",
+        "summaryLabel": "Resumen corto",
+        "summaryPlaceholder": "Agregar el postre de fin de semana para que el menú esté listo para revisión",
+        "minLength": 24,
+        "requireAny": ["postre", "especial", "menu", "menú", "precio"],
+        "requireWhy": ["porque", "para que", "listo", "revis", "fin de semana"],
+        "reviewerLabel": "¿Quién debe revisar?",
+        "reviewers": [
+          { "id": "ana", "label": "Ana" },
+          { "id": "none", "label": "Nadie" },
+          { "id": "me", "label": "Solo yo, en secreto" }
+        ],
+        "correctReviewer": "ana",
+        "card": "weekend-special",
+        "targets": [
+          { "id": "request", "label": "Abrir una solicitud" },
+          { "id": "overwrite", "label": "Sobrescribir main" }
+        ],
+        "correctTarget": "request",
+        "checkLabel": "Abrir la solicitud",
+        "errors": {
+          "summaryShort": "Escribe una oración completa sobre el cambio.",
+          "summaryWhat": "Menciona el postre, el menú o el precio, para que Ana sepa qué cambió.",
+          "summaryWhy": "Agrega el porqué; por ejemplo, \"para que esté listo para revisión\".",
+          "reviewer": "Elige a Ana, ya que ella es quien debe revisar este cambio.",
+          "target": "Coloca la rama en \"Abrir una solicitud\", porque sobrescribir main se salta la conversación."
+        },
+        "success": "¡El pull request está abierto! Mientras nadie acepte el trabajo, main seguirá siendo el menú publicado."
+      },
+      "commands": [
+        {
+          "command": "gh pr create --base main --head weekend-special --reviewer ana",
+          "gloss": "Abre un pull request para Ana; sin embargo, no cambia main por sí solo."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "¿En qué se diferencia un pull request de un push?",
+          "choices": ["Son la misma acción", "El push comparte la rama, mientras que el pull request pide fusionarla y abre la conversación", "Un pull request borra la rama"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. El push hace visible la rama; el pull request, en cambio, es el pedido para fusionarla con main.",
+          "feedbackWrong": "Compartir la rama y pedir que se fusione son dos pasos distintos. Además, una solicitud no borra el trabajo."
+        },
+        {
+          "prompt": "¿En qué se diferencia el resumen de un pull request de los mensajes de commit?",
+          "choices": ["Son lo mismo con otro nombre", "El resumen explica el conjunto de cambios y su motivo; cada commit describe un solo cambio", "El resumen reemplaza a los commits y los borra"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Los commits cuentan cada paso, y el resumen le da el panorama completo a quien revisa.",
+          "feedbackWrong": "El resumen no es un commit ni los reemplaza: explica el conjunto de cambios de la rama y por qué se hicieron."
+        },
+        {
+          "prompt": "¿Quién decide que el trabajo se fusione con main?",
+          "choices": ["El push, de forma automática", "Quienes revisan, después de la conversación", "La primera persona que abre el archivo"],
+          "correct": 1,
+          "feedbackCorrect": "Así es. La solicitud abre la conversación y, después, fusionar con main es una decisión de quienes revisan.",
+          "feedbackWrong": "Ni el push ni abrir un archivo fusionan la rama; esa decisión la toman quienes revisan."
+        },
+        {
+          "prompt": "¿Un pull request puede incluir más de un commit?",
+          "choices": ["No, solo uno por solicitud", "Sí, incluye todos los commits de la rama", "Solo si Ana los aprueba uno por uno antes"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. La solicitud muestra todos los commits de la rama, como el postre y el precio.",
+          "feedbackWrong": "Una solicitud no se limita a un commit: incluye todos los de la rama que quieres fusionar."
+        },
+        {
+          "prompt": "Acabas de abrir el pull request. ¿Dónde está ahora el trabajo de weekend-special?",
+          "choices": ["En main, ya fusionado", "En su rama, esperando la revisión", "En la computadora de Ana, que lo descargó"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Abrir la solicitud no mueve nada: la rama sigue igual hasta que alguien la fusione.",
+          "feedbackWrong": "Abrir la solicitud no fusiona la rama ni la manda a la computadora de nadie: sigue en su rama, esperando."
+        }
+      ]
+    },
+    "review": {
+      "title": "El día de la revisión",
+      "summary": "Los comentarios se responden en la misma solicitud.",
+      "deepBackground": [
+        "La revisión es el momento en que el equipo lee tu solicitud y responde. En ese contexto, un comentario no significa que rechacen toda la rama; más bien, es una nota sobre algo que conviene ajustar.",
+        "Para responder, agregas un commit en la misma rama y el pull request abierto lo incorpora automáticamente. Por lo tanto, no necesitas abrir una segunda solicitud para hacer el ajuste."
+      ],
+      "narrowBackground": [
+        "Ana pide que el precio diga \"por persona\". Entonces, actualiza weekend-special con ese commit y déjalo en la solicitud que ya está abierta. Si, en cambio, fusionaras de todos modos, main cambiaría antes de resolver el comentario."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Imagina que la solicitud es una mesa y que la nota de Ana está sobre ella. Un commit nuevo es otro plato servido en esa misma mesa; es decir, no hace falta abrir un restaurante nuevo.",
+          "Más adelante, aprobar significará que Ana considera que el trabajo está listo para fusionarse con main. Hasta entonces, el comentario es un cambio pendiente que debes hacer en la rama."
+        ],
+        "scene": "review",
+        "sceneLabels": {
+          "main": "main",
+          "mainBody": "Sigue igual",
+          "side": "Solicitud abierta",
+          "sideBody": "Ana: aclara que el precio es por persona"
+        }
+      },
+      "practice": {
+        "kind": "review",
+        "intro": "Ana dejó un comentario en la solicitud abierta. Primero, decide cómo responder; luego, coloca el commit de seguimiento en el lugar correcto.",
+        "comment": "Ana: por favor, aclara que el precio es por persona.",
+        "ask": "¿Qué haces?",
+        "choices": [
+          { "id": "update", "label": "Actualiza esta rama" },
+          { "id": "new", "label": "Cierra esta solicitud y abre una nueva" },
+          { "id": "merge", "label": "Fusiona de todos modos" }
+        ],
+        "correct": "update",
+        "wrong": "Conserva esta solicitud. Abrir una nueva divide la conversación y, por otro lado, fusionar ahora ignora la nota de Ana.",
+        "card": "Aclarar que el precio es por persona",
+        "targets": [
+          { "id": "same", "label": "La solicitud abierta" },
+          { "id": "newpr", "label": "Una segunda solicitud" }
+        ],
+        "correctTarget": "same",
+        "dropWrong": "El seguimiento pertenece a la solicitud que ya está abierta, donde Ana dejó su comentario.",
+        "needChoice": "Antes de colocar el commit, elige actualizar esta rama.",
+        "success": "¡Listo! El commit nuevo quedó en el mismo pull request, así que Ana ya puede revisar la actualización."
+      },
+      "commands": [
+        {
+          "command": "git commit -m \"Say the price is per person\"",
+          "gloss": "Registra el ajuste en tu rama."
+        },
+        {
+          "command": "git push",
+          "gloss": "Envía ese commit a la misma rama y, de este modo, el pull request abierto se actualiza."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Ana deja un comentario en tu solicitud. ¿Qué significa?",
+          "choices": ["Que rechazó toda la rama", "Que hay algo puntual que conviene ajustar", "Que debes borrar el pull request"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Un comentario es una nota sobre algo concreto, no un rechazo de todo el trabajo.",
+          "feedbackWrong": "Un comentario no rechaza la rama ni obliga a borrar nada: señala algo puntual para ajustar."
+        },
+        {
+          "prompt": "¿Qué significa aprobar?",
+          "choices": ["Que el comentario fue grosero", "Que Ana considera que el cambio está listo para fusionarse", "Que debes borrar la rama antes de que alguien la lea"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Aprobar es el \"sí\" de quien revisa, y es distinto de un comentario que pide un cambio.",
+          "feedbackWrong": "Aprobar es dar el visto bueno para fusionar; no es una opinión sobre el tono ni un paso para borrar."
+        },
+        {
+          "prompt": "¿Por qué no forzar el trabajo a main mientras el comentario sigue abierto?",
+          "choices": ["Porque main nunca puede cambiar", "Porque la solicitud existe para que el menú publicado cambie solo cuando la conversación esté resuelta", "Porque el push se desactiva durante la revisión"],
+          "correct": 1,
+          "feedbackCorrect": "Así es. El comentario abierto forma parte de la decisión; por eso, main espera hasta que se resuelva.",
+          "feedbackWrong": "main sí puede cambiar más adelante. La razón para esperar es que la revisión sigue abierta, no que el push esté bloqueado."
+        },
+        {
+          "prompt": "Una vez abierta la solicitud, los commits nuevos en la rama...",
+          "choices": ["Abren una segunda solicitud automáticamente", "Aparecen en la misma solicitud", "Borran el comentario de Ana"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. La solicitud sigue a la rama, de modo que los commits nuevos aparecen en la misma conversación.",
+          "feedbackWrong": "No abren una segunda solicitud y, tampoco, borran el comentario."
+        },
+        {
+          "prompt": "Después de agregar el commit de seguimiento, ¿qué conviene hacer?",
+          "choices": ["Avisarle a Ana en la misma conversación para que revise de nuevo", "Cerrar la solicitud y abrir otra", "Fusionar sin esperar respuesta"],
+          "correct": 0,
+          "feedbackCorrect": "Exacto. Responder en la conversación le avisa a Ana que ya puede revisar el cambio.",
+          "feedbackWrong": "No hace falta cerrar la solicitud ni apurarse a fusionar: basta con avisarle a Ana en la misma conversación."
+        }
+      ]
+    },
+    "behind": {
+      "title": "Alguien movió **main**",
+      "summary": "Si **main** avanzó, incorpóralo a tu **rama** antes de seguir.",
+      "deepBackground": [
+        "Mientras trabajas en una rama, otras personas pueden seguir actualizando main. Sin embargo, tu rama no recibe esas actualizaciones por sí sola. Por eso, decimos que está \"atrasada\" cuando main tiene commits que tu borrador todavía no tiene.",
+        "En ese caso, si sigues editando o solo haces push, puedes perderte el trabajo de los demás. Lo más seguro, entonces, es traer main a tu rama y después continuar. De esta forma, tus commits del postre se mantienen y, además, se suman los commits nuevos del equipo."
+      ],
+      "narrowBackground": [
+        "Mientras tú editabas el postre, Ana agregó una línea de impuesto en main, así que weekend-special no la tiene. Por lo tanto, pídele al agente que traiga main a tu rama, ya que un push por sí solo no trae el commit de Ana. Ojo: no es lo mismo que el pull que viste en la lección de copias. Allí actualizabas tu copia de main; aquí, en cambio, juntas el main más reciente con tu borrador."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Tu borrador tiene el postre, pero main avanzó con una línea de impuesto. En consecuencia, hay dos versiones del menú, y a tu borrador le falta el commit de main.",
+          "Traer main significa copiar la línea de impuesto de Ana en tu borrador antes de hacer el siguiente cambio. Es decir, no estás descartando el postre."
+        ],
+        "scene": "behind",
+        "sceneLabels": {
+          "leftTitle": "main",
+          "leftBody": "Tiene la línea de impuesto de Ana",
+          "rightTitle": "weekend-special",
+          "rightBody": "Tiene el postre, pero le falta la línea de impuesto"
+        }
+      },
+      "practice": {
+        "kind": "choice",
+        "intro": "Tu rama está atrasada respecto a main, porque la línea de impuesto de Ana no está en tu borrador. Elige el siguiente paso seguro.",
+        "ask": "¿Qué le dices a tu agente?",
+        "choices": [
+          { "id": "update", "label": "Trae main a mi rama" },
+          { "id": "edit", "label": "Sigue editando e ignora main" },
+          { "id": "push", "label": "Haz push de todos modos" }
+        ],
+        "correct": "update",
+        "wrong": "Ni editar ni hacer push traen la línea de impuesto de Ana. Por eso, primero trae main a tu rama.",
+        "picture": "behind",
+        "pictureLabels": {
+          "leftTitle": "main",
+          "leftBody": "La línea de impuesto está aquí",
+          "rightTitle": "Tu rama",
+          "rightBody": "Atrasada: le falta la línea de impuesto"
+        },
+        "success": "¡Bien! La línea de impuesto de main ya está en tu rama, junto con el postre. Ahora sí puedes seguir."
+      },
+      "commands": [
+        {
+          "command": "git switch weekend-special",
+          "gloss": "Se asegura de que estés en tu borrador."
+        },
+        {
+          "command": "git fetch origin",
+          "gloss": "Trae de GitHub las novedades del equipo, sin tocar todavía tus archivos."
+        },
+        {
+          "command": "git merge origin/main",
+          "gloss": "Junta con tu rama la versión más reciente de main, incluida la línea de impuesto."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "\"Tu rama está atrasada respecto a main\" significa que...",
+          "choices": ["Tu computadora está rota", "main tiene commits que todavía no están en tu borrador", "Necesitas un proyecto nuevo"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Estar atrasada se refiere a commits que faltan, no a una máquina rota.",
+          "feedbackWrong": "La rama está bien; simplemente, todavía no contiene los commits nuevos de main."
+        },
+        {
+          "prompt": "Ana agregó una línea de impuesto en main. Si haces push de tu rama, ¿qué pasa con esa línea?",
+          "choices": ["Se copia a tu rama", "Nada: el push no trae el trabajo de Ana, así que tu borrador puede seguir sin esa línea", "Se borra"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. El push envía tus commits hacia afuera, pero no trae los commits nuevos de main.",
+          "feedbackWrong": "El push va en la dirección equivocada para la línea de Ana: no la copia a tu rama y, por supuesto, tampoco la borra."
+        },
+        {
+          "prompt": "Si no traes main a tu rama y sigues trabajando, ¿qué puede pasar más adelante?",
+          "choices": ["Nada: las ramas se actualizan solas", "Tu borrador se aleja cada vez más de main, y juntarlos después cuesta más", "main se borra automáticamente"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Mientras más tiempo pase, más diferencias se acumulan entre tu rama y main.",
+          "feedbackWrong": "Las ramas no se actualizan solas y main no se borra: el riesgo es que tu borrador se aleje cada vez más."
+        },
+        {
+          "prompt": "¿En qué se diferencia traer main a tu rama del pull de la lección de copias?",
+          "choices": ["Son exactamente lo mismo", "El pull actualizaba tu copia de main; aquí juntas main con tu borrador", "Traer main borra tus commits del postre"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. En los dos casos llega trabajo nuevo, pero aquí el objetivo es que tu borrador incluya el main más reciente.",
+          "feedbackWrong": "No son lo mismo y nada se borra: aquí juntas el main más reciente con tu borrador, sin perder el postre."
+        },
+        {
+          "prompt": "Después de traer main a tu rama, ¿qué pasa con el trabajo del postre?",
+          "choices": ["Se descarta", "Se mantiene y, ahora, convive con la línea de impuesto", "Pasa de inmediato al menú publicado"],
+          "correct": 1,
+          "feedbackCorrect": "Exacto. Tus commits se mantienen y, además, los commits de main se suman a la rama.",
+          "feedbackWrong": "La actualización combina tu borrador con main; por lo tanto, ni borra el postre ni lo publica por sí sola."
+        }
+      ]
+    },
+    "conflict": {
+      "title": "Dos personas editaron lo mismo",
+      "summary": "Un **conflicto** es una decisión sobre un solo lugar del archivo.",
+      "deepBackground": [
+        "A veces, dos personas cambian la misma oración. Git puede combinar sin problemas los cambios que tocan lugares distintos; sin embargo, no puede saber qué oración prefiere el equipo cuando ambas versiones ocupan el mismo lugar.",
+        "Esa pausa es un conflicto. Las palabras no desaparecieron: al contrario, Git conserva las dos versiones para que una persona elija. Por eso, el agente debe registrar tu elección en lugar de adivinarla."
+      ],
+      "narrowBackground": [
+        "Tú escribiste sábado y Ana escribió domingo, así que el menú necesita una decisión: sábado, domingo o una oración que combine ambos días, si eso es lo que el equipo quiere decir. Además, después de elegir, todavía hay que enviar la rama para que la copia del equipo reciba esa decisión."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Imagina una línea del menú con dos notas adhesivas: la tuya dice sábado y la de Ana dice domingo. En ese sentido, el aviso de conflicto es el menú preguntándote qué nota conservar.",
+          "Una línea combinada está bien siempre que refleje la decisión real; por ejemplo, servir el plato ambos días. Lo que no está bien es adivinar. Por eso, primero eliges tú y, después, el agente anota esa elección."
+        ],
+        "scene": "conflict",
+        "sceneLabels": {
+          "you": "Tu oración",
+          "youBody": "Lo servimos el sábado.",
+          "ana": "La oración de Ana",
+          "anaBody": "Lo servimos el domingo."
+        }
+      },
+      "practice": {
+        "kind": "conflict",
+        "intro": "La misma oración se editó dos veces. Primero, elige las palabras que debe conservar el menú; luego, pídele al agente que registre esa elección.",
+        "prompt": "¿Qué oración debe conservar el menú?",
+        "options": [
+          { "id": "sat", "label": "Lo servimos el sábado." },
+          { "id": "sun", "label": "Lo servimos el domingo." },
+          { "id": "both", "label": "Lo servimos el sábado y el domingo." }
+        ],
+        "chosen": "Esa oración es tu decisión. Ahora, pídele al agente que la registre.",
+        "thenAsk": "¿Qué le dices al agente?",
+        "choices": [
+          { "id": "record", "label": "Registra la oración que elegí y termina la fusión" },
+          { "id": "guess", "label": "Elige la oración que quieras" },
+          { "id": "delete", "label": "Borra todo el menú" }
+        ],
+        "correct": "record",
+        "wrong": "No dejes que el agente adivine y, mucho menos, borres el menú. En cambio, pídele que registre la oración que elegiste.",
+        "needSentence": "Primero elige una oración; cualquiera de las tres puede ser la decisión del equipo.",
+        "success": "¡La elección quedó registrada! Ahora, envía la rama otra vez para que la copia del equipo reciba esa oración."
+      },
+      "commands": [
+        {
+          "command": "git add menu.md",
+          "gloss": "Marca la oración que elegiste como la versión resuelta del menú."
+        },
+        {
+          "command": "git commit -m \"Choose the serving day\"",
+          "gloss": "Guarda la decisión en tu rama."
+        },
+        {
+          "command": "git push",
+          "gloss": "Envía la rama para que la copia del equipo reciba la elección."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Un aviso de conflicto significa que...",
+          "choices": ["El proyecto se borró", "Tú y Ana editaron el mismo lugar, y una persona tiene que elegir las palabras", "El agente falló y el archivo desapareció"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Un conflicto es un punto de decisión, así que el archivo espera a que una persona decida.",
+          "feedbackWrong": "No se borró nada; de hecho, las dos versiones siguen ahí hasta que elijas."
+        },
+        {
+          "prompt": "Mientras el aviso está abierto, ¿qué contiene el archivo?",
+          "choices": ["Las dos versiones, hasta que elijas", "Ninguna versión", "Solo el título del menú, sin ninguna de las dos oraciones"],
+          "correct": 0,
+          "feedbackCorrect": "Exacto. Las dos oraciones se conservan para que puedas elegir una o combinarlas.",
+          "feedbackWrong": "El aviso mantiene visibles las dos ediciones; es decir, no vacía el archivo."
+        },
+        {
+          "prompt": "¿Cuándo aparece un conflicto?",
+          "choices": ["Cuando dos personas cambian partes distintas del menú", "Cuando dos personas cambian la misma línea de formas distintas", "Cada vez que haces un commit"],
+          "correct": 1,
+          "feedbackCorrect": "Correcto. Si los cambios tocan lugares distintos, Git los combina solo; el conflicto aparece cuando chocan en el mismo lugar.",
+          "feedbackWrong": "Git combina solo los cambios en lugares distintos, y un commit no causa conflictos: el conflicto aparece cuando dos cambios chocan en la misma línea."
+        },
+        {
+          "prompt": "¿Cuándo conviene usar una oración combinada?",
+          "choices": ["Cuando refleja lo que el equipo realmente decidió", "Nunca, porque los conflictos no permiten combinar", "Cuando quieres evitar decírselo al agente"],
+          "correct": 0,
+          "feedbackCorrect": "Correcto. Poner sábado y domingo juntos está bien, siempre que esa sea la decisión real.",
+          "feedbackWrong": "Combinar está permitido cuando coincide con la decisión. Aun así, igual debes decirle al agente qué registrar."
+        },
+        {
+          "prompt": "Después de elegir, ¿por qué todavía hay que enviar la rama?",
+          "choices": ["Porque la elección queda registrada solo en tu computadora hasta que haces push", "Porque elegir la fusiona con main por sí solo", "Porque Ana puede ver tu pantalla"],
+          "correct": 0,
+          "feedbackCorrect": "Exacto. Registrar la elección crea un commit local, que solo llega al equipo cuando envías la rama.",
+          "feedbackWrong": "La elección no se publica sola y, además, Ana no puede ver tu pantalla. Por eso, el push es lo que la envía."
+        }
+      ]
+    }
+  }
+}

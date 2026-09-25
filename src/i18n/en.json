@@ -1,0 +1,880 @@
+{
+  "ui": {
+    "primary": "Primary",
+    "home": "Home",
+    "lessons": "Lessons",
+    "useLight": "Light theme",
+    "useDark": "Dark theme",
+    "showCommands": "Show commands",
+    "hideCommands": "Hide commands",
+    "commandNote": "These are the commands your agent would run. However, you do not need them to finish the lesson.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFailed": "Copying did not work, but the command is still on the screen.",
+    "deepBackground": "Deep background",
+    "backgroundNote": "If you already know the surrounding idea, feel free to skip this part.",
+    "skipBackground": "I already know this",
+    "showBackground": "Show the background",
+    "narrowBackground": "For this lesson",
+    "intuition": "Intuition",
+    "practice": "Try it",
+    "quiz": "Quiz",
+    "quizLocked": "First, finish the practice above; after that, these questions will help you review the idea.",
+    "questionOf": "Question {current} of {total}",
+    "lessonLabel": "Lesson {current} of {total}",
+    "lessonComplete": "Lesson complete! You did the practice and, on top of that, answered every question.",
+    "forgetProgress": "Forget progress for this lesson",
+    "forgetConfirm": "Are you sure? This clears your practice and quiz answers for this lesson, so you will have to do them again.",
+    "forgetYes": "Yes, forget it",
+    "forgetCancel": "Cancel",
+    "forgotten": "Done: the lesson is back to new, so you can practice again from the start.",
+    "previous": "Previous",
+    "next": "Next lesson",
+    "backToPath": "Back to the path",
+    "missing": "That lesson is not part of the path."
+  },
+  "landing": {
+    "eyebrow": "An interactive guide for people starting to work with Git",
+    "welcome": "A short course on how a team uses Git.",
+    "welcomeBody": "Each lesson puts you in a real work situation, and from there you decide what to ask your AI agent.",
+    "audienceTitle": "Who it is for",
+    "audience": "This site is for people who are starting to get to know Git and GitHub. In other words, people who already work with version control through an AI agent, but who still run into many new concepts and terms they want to understand better.",
+    "start": "Start the lessons",
+    "continue": "Continue where you left off"
+  },
+  "learn": {
+    "eyebrow": "Eight short lessons",
+    "title": "The path",
+    "intro": "Each lesson has four parts: a background, a picture of the idea, a hands-on scene and, finally, a quiz. Your progress is also saved in this browser.",
+    "story": "You and Ana work at a restaurant, and the project you share is the weekend menu customers see. Throughout the lessons, you will change it together; however, customers should not see any change that is not ready yet.",
+    "finished": "You finished all eight lessons!",
+    "done": "Done"
+  },
+  "viz": {
+    "local": "Your computer",
+    "localSub": "Your local copy",
+    "remote": "GitHub",
+    "remoteSub": "The team's copy, in the cloud",
+    "dropHere": "Drop here",
+    "notHere": "Not here yet",
+    "commit": {
+      "published": "Published menu",
+      "anaTitle": "Ana: title",
+      "dessert": "New dessert",
+      "price": "Price 12 → 14",
+      "tax": "Ana: tax line",
+      "merge": "Bring in main",
+      "unfinished": "Unfinished",
+      "noReview": "No review",
+      "perPerson": "Per person"
+    },
+    "pull": {
+      "step1": "Bring Ana's change onto your computer",
+      "file": "Menu title",
+      "dragInstruction": "Drag “{card}” from GitHub onto your computer, in the graph above. You can also tap the card."
+    },
+    "branch": {
+      "step2": "Place the dessert on the right lane",
+      "dragInstruction": "Drag the new dessert onto the right branch in the graph above. You can also tap the branch directly."
+    },
+    "commit_": {
+      "step1": "Choose which files go into the snapshot",
+      "history": "How it will look in the history",
+      "pending": "Your commit",
+      "dragInstruction": "Drag the files that belong in the snapshot to “This commit”. If you make a mistake, drag them back; you can also tap a file to move it."
+    },
+    "choice": {
+      "step": "Decide the next step",
+      "behind": "Behind"
+    },
+    "pr": {
+      "title": "Open a pull request",
+      "wantsMerge": "wants to merge into",
+      "step3": "Decide where the branch goes",
+      "open": "Open",
+      "draft": "Not opened",
+      "link": "Pull request",
+      "dragInstruction": "Drag the branch onto one of the two destinations, or tap the one you choose."
+    },
+    "review": {
+      "prTitle": "Add the weekend dessert",
+      "open": "Open",
+      "new": "New",
+      "step2": "Place the follow-up commit",
+      "slot": "Drop the commit here",
+      "commented": "commented",
+      "you": "You",
+      "committed": "added a commit",
+      "dragInstruction": "Drag the commit to the right request, above: the open conversation or a new request. You can also tap the destination."
+    },
+    "conflict": {
+      "badge": "Conflict",
+      "resolved": "Resolved",
+      "yours": "Your version",
+      "theirs": "Ana's version",
+      "both": "Combine both",
+      "result": "How the menu will read",
+      "merged": "Merge finished",
+      "heading": "# Weekend special"
+    },
+    "next": "Next",
+    "hints": {
+      "branchChoice": "Tap what you would do before editing the menu. If you pick wrong, the graph above shows what would happen.",
+      "choiceGraph": "Tap what you would ask your agent and watch how the graph above changes.",
+      "agentChoice": "Tap the phrase you would say to your agent.",
+      "commitMessage": "Type a short name that says what changed, then tap “Save this snapshot”.",
+      "conflictSentence": "Tap the sentence that should stay. The editor above shows how the menu will read.",
+      "prSummary": "Write one sentence about what changed and why. When you are done, tap “Next”.",
+      "prReviewer": "Tap the person who should review this change.",
+      "reviewChoice": "Read Ana's comment above, then tap how you would respond."
+    }
+  },
+  "lessons": {
+    "shared": {
+      "title": "Project copies and **pull**",
+      "summary": "A **pull** brings onto your computer what the team already has.",
+      "deepBackground": [
+        "Your computer and the team's copy on **GitHub** do not always match. That is why, when you ask your agent to bring onto your computer what the team already has, the action is called a **pull**, and the agent runs it with the **git pull** command."
+      ],
+      "narrowBackground": [
+        "In the branch lesson you left the dessert on weekend-special, while **main** stayed the menu the team has already agreed to publish. Meanwhile, Ana changed main on **GitHub**. So, you first go back to main and, if your copy still shows yesterday's menu, a **pull** updates it with what is already on **GitHub**. Keep in mind, though, that it does not send your private edits."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Ana changed the menu title on the team copy, from \"Weekend Menu\" to \"Weekend Menu — Spring\"; however, your copy still shows yesterday's title. Therefore, asking your agent to bring that title over is a **pull**: the change travels toward your computer, while you do not publish anything of yours."
+        ],
+        "scene": "copies",
+        "sceneLabels": {
+          "leftTitle": "Team copy",
+          "leftBody": "Weekend Menu — Spring",
+          "rightTitle": "Your copy",
+          "rightBody": "Weekend Menu"
+        }
+      },
+      "practice": {
+        "kind": "pull",
+        "intro": "Ana's title is already on **GitHub**, but your copy is behind. First, drag her update onto your copy; then, ask your agent for a **pull**.",
+        "card": "Ana's title change",
+        "from": "Team copy",
+        "to": "Your copy",
+        "yourBefore": "Weekend Menu",
+        "teamNow": "Weekend Menu — Spring",
+        "dropHint": "Drop Ana's update here",
+        "ask": "What do you tell your agent?",
+        "choices": [
+          { "id": "pull", "label": "Do a **pull**: bring the team's latest work onto my copy" },
+          { "id": "push", "label": "Send my copy and replace the team's title" },
+          { "id": "branch", "label": "Start a new branch for the title" }
+        ],
+        "correct": "pull",
+        "wrong": "That is not a **pull**. Remember that a **pull** brings the team's newer title onto your copy, not the other way around.",
+        "success": "That was a **pull**! Your copy caught up with the team's and, in the process, you did not publish anything new."
+      },
+      "commands": [
+        {
+          "command": "git switch main",
+          "gloss": "Goes back to main, the published version of the menu."
+        },
+        {
+          "command": "git pull",
+          "gloss": "Brings the team's latest work onto your copy of main."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Your copy shows the old title, whereas the team copy shows Ana's new title. Which copy is behind?",
+          "choices": ["Your copy", "The team copy", "They already match"],
+          "correct": 0,
+          "feedbackCorrect": "Exactly: being behind means your copy is missing work the team already has.",
+          "feedbackWrong": "The newer title is already on the team copy; your copy, on the other hand, has not received it yet."
+        },
+        {
+          "prompt": "What does a **pull** do?",
+          "choices": ["It publishes your private notes", "It brings the team's newer work onto your copy", "It deletes your copy"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A pull updates your copy from the team's, but it does not publish your work.",
+          "feedbackWrong": "Actually, a pull moves the team's newer work toward you. As a result, it neither publishes nor deletes anything."
+        },
+        {
+          "prompt": "Ana changes the menu on GitHub while you work on something else. Does your copy update by itself?",
+          "choices": ["Yes, instantly", "No, it stays the same until you do a pull", "Only if Ana sends you an email"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. Copies do not sync on their own; that is why the pull exists.",
+          "feedbackWrong": "Your copy does not change on its own, nor because Ana tells you: it updates when you do a pull."
+        },
+        {
+          "prompt": "Which of these does a **pull** not do?",
+          "choices": ["Update your copy", "Publish work you have not sent", "Use the team copy as the source"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A pull only reads from the team, so it does not publish your unsent work.",
+          "feedbackWrong": "A pull does update your copy and, in addition, uses the team copy as the source. What it does not do is publish your unsent edits."
+        },
+        {
+          "prompt": "After a **pull**, what should the title on your copy match?",
+          "choices": ["Whatever you typed yesterday", "The team copy", "A blank page"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. Since your copy caught up, the title now matches the team copy.",
+          "feedbackWrong": "In fact, the whole point of a pull is to make your copy match the team's newer version."
+        }
+      ]
+    },
+    "commit": {
+      "title": "Saving a change",
+      "summary": "A **commit** is a named snapshot of the files you choose.",
+      "deepBackground": [
+        "While you work, files keep changing on your computer. A commit saves one moment of that history: it records which files you included and gives them a short name describing the change. In this way, it becomes a checkpoint the team can talk about later.",
+        "That said, the checkpoint stays on your computer until you deliberately send it. In other words, saving a commit is not the same as telling the team, nor is it a request for someone to approve it."
+      ],
+      "narrowBackground": [
+        "You choose which files go into the snapshot, so a private note can stay out. Moreover, the name should explain what changed in everyday words, so that tomorrow's reader does not have to guess."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Back on your weekend-special branch, the weekend price went from 12 to 14. At the same time, you have a private draft note that is not meant for the team. For that reason, the snapshot should hold only the price, and its name should say so clearly.",
+          "A message like \"updates\" hides the story. By contrast, \"Update the weekend price\" immediately tells the next person what this checkpoint is about."
+        ],
+        "scene": "files",
+        "sceneLabels": {
+          "price": "Menu price",
+          "priceDetail": "Went from 12 to 14",
+          "draft": "Private draft note",
+          "draftDetail": "Ideas for later, not for this snapshot"
+        }
+      },
+      "practice": {
+        "kind": "commit",
+        "intro": "Put only the price into the commit, and then give the snapshot a plain name. The private note, on the other hand, should stay out.",
+        "files": [
+          { "id": "price", "label": "Menu price", "detail": "Went from 12 to 14" },
+          { "id": "draft", "label": "Private draft note", "detail": "Not for the team" }
+        ],
+        "tray": "Changed files",
+        "commitLabel": "This commit",
+        "messageLabel": "Name this snapshot",
+        "messagePlaceholder": "Update the weekend price",
+        "checkLabel": "Save this snapshot",
+        "rejectExact": ["updates", "update", "misc", "changes", "change", "stuff", "fix", "wip"],
+        "mustIncludeAny": ["price", "weekend"],
+        "minLength": 12,
+        "errors": {
+          "needPrice": "The price change is not in the commit yet.",
+          "hasDraft": "Leave the private draft note out of this snapshot, since it is not part of this change.",
+          "short": "Say what changed; to do that, use a few more words.",
+          "vague": "A name like \"updates\" does not say what changed. So, mention the price.",
+          "missing": "Mention the price or the weekend, so that the name matches the change."
+        },
+        "success": "Nice! The commit records the price on your computer. However, Ana still cannot see it."
+      },
+      "commands": [
+        {
+          "command": "git switch weekend-special",
+          "gloss": "Goes back to your draft, so the commit lands on the branch and not on main."
+        },
+        {
+          "command": "git add price.md",
+          "gloss": "Chooses the price file for this snapshot and leaves the draft note out."
+        },
+        {
+          "command": "git commit -m \"Update the weekend price\"",
+          "gloss": "Saves the named snapshot on your computer."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is a commit?",
+          "choices": ["The same as sending work to the team", "A named snapshot of chosen files that is still on your computer", "Ana's approval"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A commit names a checkpoint, and that checkpoint stays local until you send it.",
+          "feedbackWrong": "Sending and approving are steps that come later. For now, a commit is just the local snapshot."
+        },
+        {
+          "prompt": "After saving the commit, you change the price again, from 14 to 15. What happens to the commit you already saved?",
+          "choices": ["It updates itself and now says 15", "It still holds 14; to save 15, you make another commit", "It gets deleted, because the file changed"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A commit is a snapshot of a moment: it does not change afterward. Each new change goes into a new commit.",
+          "feedbackWrong": "A commit does not update or delete itself: it keeps the moment you made it, and 15 will go into another commit."
+        },
+        {
+          "prompt": "Why make several small commits instead of one huge one?",
+          "choices": ["So the history shows each change separately and is easy to follow", "Because Git does not accept commits with more than one file", "So the team gets the work without you sending it"],
+          "correct": 0,
+          "feedbackCorrect": "Exactly. Each commit tells one change, so the history reads step by step.",
+          "feedbackWrong": "Git does accept commits with several files, and no commit sends itself: the benefit is a clear history."
+        },
+        {
+          "prompt": "Why is \"updates\" a weak commit name?",
+          "choices": ["Because it is too long", "Because tomorrow nobody will be able to tell what changed", "Because the agent rejects every short word"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A useful name says what changed and, as a result, the history stays easy to read.",
+          "feedbackWrong": "Length is not the problem; rather, \"updates\" hides which change this snapshot holds."
+        },
+        {
+          "prompt": "Right after this commit, can Ana already see the new price?",
+          "choices": ["Yes, because a commit publishes it", "No, because it is still only on your computer", "Only if the message mentions her name"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. The team sees the work once you send the branch, not at the moment you commit.",
+          "feedbackWrong": "A commit does not publish anything. Therefore, Ana will only see it after you send the branch."
+        }
+      ]
+    },
+    "branch": {
+      "title": "A draft of the menu",
+      "summary": "A **branch** is a draft with a custom name, while **main** stays the menu customers see.",
+      "deepBackground": [
+        "**Git** is the program that keeps the weekend menu's history: what changed, who did it, and when. It is not a website, though. **GitHub**, on the other hand, is the website where the team keeps its copy of that history. Thanks to that, several people can look at the same menu, even though each person also has their own copy on their computer.",
+        "Within that history, **main** is the published menu. Consequently, if you edit it directly, customers would see a dessert whose recipe is not finished yet.",
+        "To avoid that, you can create a **branch**: a draft with a custom name of your choice, based on that same menu. You can try the change there, while **main** stays the same until the team accepts the draft and **merges** it into main, that is, until it adds those changes to the published menu. What is more, there can be more than one branch at a time: for example, one for the dessert and another for the prices, and each one moves forward on its own, without affecting the others. Finally, at first the branch exists only on your computer, so no one on the team can see it until you decide to share it."
+      ],
+      "narrowBackground": [
+        "The new dessert's recipe is not finished yet, so it cannot go on the menu customers see. For that reason, start a **branch** before you edit, and keep the recipe there. In this story, that branch is called weekend-special."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "**main** is the menu guests would see today, whereas the new dessert is still a tryout. That is why, if you edit **main** directly, the published menu changes before anyone has agreed.",
+          "If, instead, you create weekend-special first, the dessert gets its own draft and, as a result, **main** can stay as it is."
+        ],
+        "scene": "lanes",
+        "sceneLabels": {
+          "main": "main",
+          "mainBody": "Published menu, still with the old dessert",
+          "side": "weekend-special",
+          "sideBody": "The new dessert, which is not ready yet"
+        }
+      },
+      "practice": {
+        "kind": "branch",
+        "intro": "The new dessert is not ready yet. So, decide whether to try it in a draft or write it straight onto the published menu.",
+        "ask": "What do you do before editing?",
+        "choices": [
+          { "id": "branch", "label": "Start a branch and keep main as the published menu" },
+          { "id": "main", "label": "Edit main directly" },
+          { "id": "push", "label": "Send main to the team before editing" }
+        ],
+        "correct": "branch",
+        "wrong": "Editing or sending **main** would change the menu customers see. That is why you should start a draft first.",
+        "started": "Great: weekend-special is now your draft. Next, put the new dessert there rather than on **main**.",
+        "card": "New dessert",
+        "holding": "Work to place",
+        "mainLane": "main",
+        "branchLane": "weekend-special",
+        "mainNote": "Published menu",
+        "branchNote": "Your draft for unfinished work",
+        "dropWrong": "That is the published menu. Instead, put the unfinished dessert in your draft.",
+        "needBranch": "Before you place the dessert, start the branch.",
+        "success": "Well done! The new dessert is on your branch and, meanwhile, main still shows the published menu."
+      },
+      "commands": [
+        {
+          "command": "git switch -c weekend-special",
+          "gloss": "Starts a new draft so that main stays the published menu."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "If the dessert is not finished, why shouldn't you edit main directly?",
+          "choices": ["Because main can only hold pictures", "Because main is the published menu; therefore, unfinished work would change what the team treats as ready", "Because branches are only for deleting files"],
+          "correct": 1,
+          "feedbackCorrect": "Right. main is the agreed version, so unfinished work belongs on a branch.",
+          "feedbackWrong": "The reason is to protect the published menu; it has nothing to do with a limit on pictures or a rule about deleting."
+        },
+        {
+          "prompt": "What is a branch?",
+          "choices": ["A copy of Ana's computer", "A draft with a custom name, based on the same menu", "The website where the team keeps the history"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. A branch is a draft with a custom name; the website where the team keeps the history, on the other hand, is GitHub.",
+          "feedbackWrong": "A branch is not anyone's computer, nor a website: it is a draft with a custom name inside the menu's history."
+        },
+        {
+          "prompt": "You want to try the new dessert and, at the same time, a price change. What can you do?",
+          "choices": ["Use a single branch and wait until the dessert is done before starting on the prices", "Create one branch for each change, and let each one move forward on its own", "Put the prices straight on main while you finish the dessert"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. There can be several branches at once, and each one moves forward without affecting the others.",
+          "feedbackWrong": "There is no need to wait or to touch main: you can create another branch, since each one moves forward on its own."
+        },
+        {
+          "prompt": "When should the published menu show the new dessert?",
+          "choices": ["As soon as you open the file", "After the team reviews the draft and merges it into main", "As soon as you save the dessert on your branch"],
+          "correct": 1,
+          "feedbackCorrect": "Right. Saving the dessert on your branch does not change the published menu; first the team reviews it and, afterward, merges it into main.",
+          "feedbackWrong": "Neither opening the file nor saving the dessert on your branch publishes it: main only changes when the team merges the draft."
+        },
+        {
+          "prompt": "Who chooses the name of a branch like weekend-special?",
+          "choices": ["Git generates it at random", "You do, with a custom name that describes the change", "It always has to be called main"],
+          "correct": 1,
+          "feedbackCorrect": "Right. You choose the name, which is why it helps if it says what the draft is about.",
+          "feedbackWrong": "Git does not make up the name, and main is already the published menu: you choose the branch name."
+        }
+      ]
+    },
+    "push": {
+      "title": "Sending your work",
+      "summary": "A **push** shares your **branch**, but it does not merge it.",
+      "deepBackground": [
+        "As long as a commit is only on your computer, Ana cannot see it, because the team copy on GitHub only changes when someone sends work there. A push is precisely that send: it carries the branch from your computer to the team's copy.",
+        "That is why direction matters. A pull brings the team's work to you; a push, by contrast, sends your work to the team. However, neither one, by itself, means the published menu has changed."
+      ],
+      "narrowBackground": [
+        "For now, weekend-special exists only on your computer, so Ana cannot open it yet. Once you push the branch, she will be able to see your commits. Even so, those commits will not end up on main."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "You already named the price snapshot, but it still sits on your machine. As a result, Ana's screen shows no weekend-special branch yet. She is not ignoring you; the work simply has not been sent.",
+          "If you ask the agent to send the branch, that draft becomes visible to the team. If, on the other hand, you ask it to put the work on main right now, you would skip the review you still want."
+        ],
+        "scene": "local",
+        "sceneLabels": {
+          "leftTitle": "Your computer",
+          "leftBody": "Commit: Update the weekend price",
+          "rightTitle": "Team copy",
+          "rightBody": "No weekend-special branch yet"
+        }
+      },
+      "practice": {
+        "kind": "choice",
+        "intro": "The commit exists only on your computer and, therefore, Ana cannot see the branch yet. Choose what to ask your agent.",
+        "ask": "What should the agent do?",
+        "choices": [
+          { "id": "push", "label": "Send this branch to the team" },
+          { "id": "pull", "label": "Bring the team's work onto my copy" },
+          { "id": "main", "label": "Put it on main now" }
+        ],
+        "correct": "push",
+        "wrong": "A pull brings work toward you, and putting it on main skips review. What you actually need is to send the branch.",
+        "picture": "local",
+        "pictureLabels": {
+          "leftTitle": "Your computer",
+          "leftBody": "weekend-special, only here",
+          "rightTitle": "Team copy",
+          "rightBody": "Ana cannot see the branch yet"
+        },
+        "success": "You pushed the branch! Now the team can see it and, at the same time, main is unchanged."
+      },
+      "commands": [
+        {
+          "command": "git push -u origin weekend-special",
+          "gloss": "Sends your branch to the team copy, but does not merge it into main."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "In which direction does a push send work?",
+          "choices": ["From the team copy onto your computer", "From your computer to the team copy", "From a comment into a private note"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A push publishes your branch outward, while a pull goes in the opposite direction.",
+          "feedbackWrong": "If the work is only on your computer, a push is exactly what sends it to the team."
+        },
+        {
+          "prompt": "After you push weekend-special, who can see those commits?",
+          "choices": ["Only your computer", "The team, on that branch", "Everyone, immediately, on the published menu"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. The branch is now on the team copy; however, main is still the published menu.",
+          "feedbackWrong": "A push shares the branch, so the work is no longer private. Even so, it does not merge it into main."
+        },
+        {
+          "prompt": "Does a push approve a change to the published menu?",
+          "choices": ["Yes, a push means it is merged", "No. A push shares the branch, and a pull request is how you ask to merge it", "Only on Fridays"],
+          "correct": 1,
+          "feedbackCorrect": "That's it: sharing and approving are different steps, and a push is only the sharing part.",
+          "feedbackWrong": "A push does not merge the branch into main. Approval, instead, comes later as part of a conversation."
+        },
+        {
+          "prompt": "You already pushed weekend-special, and then you add another commit on your computer. Can Ana see it?",
+          "choices": ["Yes, the push stays on and sends it automatically", "No, not until you push again", "Only if the commit is on main"],
+          "correct": 1,
+          "feedbackCorrect": "Right. Each push sends what you have at that moment; new commits need another push.",
+          "feedbackWrong": "The push does not keep listening, nor does it depend on main: new commits reach the team with another push."
+        },
+        {
+          "prompt": "After the push, how many copies of weekend-special exist?",
+          "choices": ["Only the one on GitHub, because yours is deleted", "Two: the one on your computer and the one on GitHub", "None, because the push merges it into main"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. The push copies the branch to GitHub, but your local copy is still there.",
+          "feedbackWrong": "Your copy is not deleted or merged: after the push there is one on your computer and another on GitHub."
+        }
+      ]
+    },
+    "pull-request": {
+      "title": "Asking to merge",
+      "summary": "A **pull request** is a conversation, not an overwrite.",
+      "deepBackground": [
+        "Once a branch is on the team copy, anyone can look at it. This is where the pull request comes in: it is the formal ask for the team to consider merging that branch into main. In addition, it works as the thread where comments, replies, and later commits stay together.",
+        "However, opening the request does not change main. After the conversation, someone still has to decide whether the published menu should take the work."
+      ],
+      "narrowBackground": [
+        "Since Ana is the reviewer for this menu, your summary should explain what changed and why, so that she does not have to guess. Finally, the branch should go on \"Open a request\", not on \"Overwrite main\"."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Picture weekend-special moving toward main, but stopping short and turning into a request card. That card is the conversation, while main remains untouched on the far side.",
+          "For example, a summary such as \"Add the weekend dessert so the menu is ready for review\" tells Ana both the change and the reason behind it."
+        ],
+        "scene": "request",
+        "sceneLabels": {
+          "main": "main",
+          "mainBody": "Published menu, unchanged",
+          "side": "Pull request",
+          "sideBody": "weekend-special is asking to be merged"
+        }
+      },
+      "practice": {
+        "kind": "pr",
+        "intro": "Ask to merge weekend-special. To do so, write a summary, choose Ana as the reviewer and, finally, place the branch on a request rather than on main.",
+        "summaryLabel": "Short summary",
+        "summaryPlaceholder": "Add the weekend dessert so the menu is ready for review",
+        "minLength": 24,
+        "requireAny": ["dessert", "special", "menu", "price"],
+        "requireWhy": ["because", " so ", "ready", "review", "weekend"],
+        "reviewerLabel": "Who should review?",
+        "reviewers": [
+          { "id": "ana", "label": "Ana" },
+          { "id": "none", "label": "No one" },
+          { "id": "me", "label": "Only me, in secret" }
+        ],
+        "correctReviewer": "ana",
+        "card": "weekend-special",
+        "targets": [
+          { "id": "request", "label": "Open a request" },
+          { "id": "overwrite", "label": "Overwrite main" }
+        ],
+        "correctTarget": "request",
+        "checkLabel": "Open the request",
+        "errors": {
+          "summaryShort": "Write a full sentence about the change.",
+          "summaryWhat": "Mention the dessert, the menu, or the price, so that Ana knows what changed.",
+          "summaryWhy": "Add the why; for example, \"so it is ready for review\".",
+          "reviewer": "Choose Ana, since she is the teammate who should look at this.",
+          "target": "Place the branch on \"Open a request\", because overwriting main skips the conversation."
+        },
+        "success": "The pull request is open! Until someone accepts the work, main will remain the published menu."
+      },
+      "commands": [
+        {
+          "command": "gh pr create --base main --head weekend-special --reviewer ana",
+          "gloss": "Opens a pull request for Ana; however, it does not change main by itself."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How is a pull request different from a push?",
+          "choices": ["They are the same action", "A push shares the branch, whereas a pull request asks to merge it and starts the conversation", "A pull request deletes the branch"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A push makes the branch visible; a pull request, by contrast, is the ask to merge it into main.",
+          "feedbackWrong": "Sharing the branch and asking to merge it are two separate steps. Besides, a request does not delete the work."
+        },
+        {
+          "prompt": "How is a pull request summary different from commit messages?",
+          "choices": ["They are the same thing with another name", "The summary explains the whole set of changes and why; each commit describes a single change", "The summary replaces the commits and deletes them"],
+          "correct": 1,
+          "feedbackCorrect": "Right. The commits tell each step, and the summary gives the reviewer the full picture.",
+          "feedbackWrong": "The summary is not a commit and does not replace them: it explains the branch's whole set of changes and why they were made."
+        },
+        {
+          "prompt": "Who decides that the work gets merged into main?",
+          "choices": ["The push, automatically", "The reviewers, after the conversation", "Whoever opens the file first"],
+          "correct": 1,
+          "feedbackCorrect": "That's it. The request starts the conversation and, afterward, merging into main is the reviewers' decision.",
+          "feedbackWrong": "Neither a push nor opening a file merges the branch; that decision belongs to the reviewers."
+        },
+        {
+          "prompt": "Can a pull request include more than one commit?",
+          "choices": ["No, only one per request", "Yes, it includes every commit on the branch", "Only if Ana approves them one by one first"],
+          "correct": 1,
+          "feedbackCorrect": "Right. The request shows every commit on the branch, such as the dessert and the price.",
+          "feedbackWrong": "A request is not limited to one commit: it includes every commit on the branch you want to merge."
+        },
+        {
+          "prompt": "You just opened the pull request. Where is the weekend-special work now?",
+          "choices": ["On main, already merged", "On its branch, waiting for review", "On Ana's computer, since she downloaded it"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. Opening the request does not move anything: the branch stays as it is until someone merges it.",
+          "feedbackWrong": "Opening the request does not merge the branch or send it to anyone's computer: it stays on its branch, waiting."
+        }
+      ]
+    },
+    "review": {
+      "title": "Review day",
+      "summary": "Comments are answered on the same request.",
+      "deepBackground": [
+        "Review is the moment when the team reads your request and responds. In that context, a comment does not mean the whole branch is rejected; rather, it is a note about something worth adjusting.",
+        "To respond, you add a commit on the same branch, and the open pull request picks it up automatically. Therefore, you do not need a second request for the follow-up."
+      ],
+      "narrowBackground": [
+        "Ana asks for the price to say \"per person\". So, update weekend-special with that commit and keep it on the request that is already open. If, instead, you merged anyway, main would change before the comment is settled."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Imagine the request is a table with Ana's note on it. A new commit is another plate served on that same table; in other words, there is no need to open a new restaurant.",
+          "Later on, approving will mean Ana is saying the work is ready to be merged into main. Until then, the comment is a pending change you need to make on the branch."
+        ],
+        "scene": "review",
+        "sceneLabels": {
+          "main": "main",
+          "mainBody": "Still unchanged",
+          "side": "Open request",
+          "sideBody": "Ana: make it clear the price is per person"
+        }
+      },
+      "practice": {
+        "kind": "review",
+        "intro": "Ana left a comment on the open request. First, decide how to respond; then, put the follow-up commit in the right place.",
+        "comment": "Ana: please make it clear the price is per person.",
+        "ask": "What do you do?",
+        "choices": [
+          { "id": "update", "label": "Update this branch" },
+          { "id": "new", "label": "Close this and start a new request" },
+          { "id": "merge", "label": "Merge anyway" }
+        ],
+        "correct": "update",
+        "wrong": "Keep this request. A new one would split the conversation and, on top of that, merging now ignores Ana's note.",
+        "card": "Say the price is per person",
+        "targets": [
+          { "id": "same", "label": "The open request" },
+          { "id": "newpr", "label": "A second request" }
+        ],
+        "correctTarget": "same",
+        "dropWrong": "The follow-up belongs on the request that is already open, where Ana left her comment.",
+        "needChoice": "Before you place the commit, choose to update this branch.",
+        "success": "Done! The new commit sits on the same pull request, so Ana can now review the update."
+      },
+      "commands": [
+        {
+          "command": "git commit -m \"Say the price is per person\"",
+          "gloss": "Records the follow-up on your branch."
+        },
+        {
+          "command": "git push",
+          "gloss": "Sends that commit to the same branch and, in this way, updates the open pull request."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Ana leaves a comment on your request. What does it mean?",
+          "choices": ["That she rejected the whole branch", "That there is something specific worth adjusting", "That you must delete the pull request"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. A comment is a note about something specific, not a rejection of all the work.",
+          "feedbackWrong": "A comment does not reject the branch or require deleting anything: it points out something specific to adjust."
+        },
+        {
+          "prompt": "What does approving mean?",
+          "choices": ["That the comment was rude", "That Ana considers the change ready to merge", "That you must delete the branch before anyone can read it"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. Approval is the reviewer's \"yes\", and it is different from a comment that asks for a change.",
+          "feedbackWrong": "Approving is a green light to merge; it is not a comment on tone, nor is it a step to delete anything."
+        },
+        {
+          "prompt": "Why not force the work onto main while the comment is still open?",
+          "choices": ["Because main can never change", "Because the request exists so that the published menu changes only after the conversation is settled", "Because push is turned off during review"],
+          "correct": 1,
+          "feedbackCorrect": "That's it. The open comment is part of the decision; that is why main waits until it is settled.",
+          "feedbackWrong": "main can indeed change later. The reason to wait is that the review is still unfinished, not that push is locked."
+        },
+        {
+          "prompt": "Once the request is open, new commits on the branch will...",
+          "choices": ["Start a second request automatically", "Show up on the same request", "Erase Ana's comment"],
+          "correct": 1,
+          "feedbackCorrect": "Right. The request follows the branch, so new commits appear in the same conversation.",
+          "feedbackWrong": "They do not open a second request and, likewise, they do not erase the comment."
+        },
+        {
+          "prompt": "After adding the follow-up commit, what is a good next step?",
+          "choices": ["Let Ana know in the same conversation so she can review again", "Close the request and open another one", "Merge without waiting for a reply"],
+          "correct": 0,
+          "feedbackCorrect": "Exactly. Replying in the conversation tells Ana she can review the change.",
+          "feedbackWrong": "There is no need to close the request or rush to merge: just let Ana know in the same conversation."
+        }
+      ]
+    },
+    "behind": {
+      "title": "Someone else moved **main**",
+      "summary": "If **main** moved ahead, bring it into your **branch** before you continue.",
+      "deepBackground": [
+        "While you work on a branch, other people can keep updating main. However, your branch does not receive those updates on its own. That is why we say it is \"behind\" when main has commits your draft does not have yet.",
+        "In that case, if you keep editing or only push, you might miss other people's work. The safe move, then, is to bring main into your branch and continue afterward. This way, your dessert commits stay and, in addition, the team's new commits join them."
+      ],
+      "narrowBackground": [
+        "While you were editing the dessert, Ana added a tax line on main, so weekend-special does not have it. Therefore, ask the agent to bring main into your branch, since pushing alone does not fetch Ana's commit. Note that this is not the same as the pull from the project copies lesson. There you updated your copy of main; here, instead, you combine the latest main with your draft."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Your draft has the dessert, but main has moved ahead with a tax line. Consequently, there are two versions of the menu, and your draft is missing main's commit.",
+          "Bringing main in means copying Ana's tax line into your draft before the next change. In other words, you are not throwing the dessert away."
+        ],
+        "scene": "behind",
+        "sceneLabels": {
+          "leftTitle": "main",
+          "leftBody": "Has Ana's tax line",
+          "rightTitle": "weekend-special",
+          "rightBody": "Has the dessert, but is missing the tax line"
+        }
+      },
+      "practice": {
+        "kind": "choice",
+        "intro": "Your branch is behind main, because Ana's tax line is not in your draft. Choose the safe next step.",
+        "ask": "What do you tell your agent?",
+        "choices": [
+          { "id": "update", "label": "Bring main into my branch" },
+          { "id": "edit", "label": "Keep editing and ignore main" },
+          { "id": "push", "label": "Push anyway" }
+        ],
+        "correct": "update",
+        "wrong": "Neither editing nor pushing fetches Ana's tax line. That is why you should bring main into your branch first.",
+        "picture": "behind",
+        "pictureLabels": {
+          "leftTitle": "main",
+          "leftBody": "Tax line is here",
+          "rightTitle": "Your branch",
+          "rightBody": "Behind: the tax line is missing"
+        },
+        "success": "Nice! main's tax line is now on your branch, together with the dessert. Now you can continue."
+      },
+      "commands": [
+        {
+          "command": "git switch weekend-special",
+          "gloss": "Makes sure you are on your draft."
+        },
+        {
+          "command": "git fetch origin",
+          "gloss": "Brings the team's news from GitHub, without touching your files yet."
+        },
+        {
+          "command": "git merge origin/main",
+          "gloss": "Combines the latest main, including the tax line, with your branch."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "\"Your branch is behind main\" means that...",
+          "choices": ["Your computer is broken", "main has commits that are not in your draft yet", "You need a brand-new project"],
+          "correct": 1,
+          "feedbackCorrect": "Right. Being behind is about missing commits, not about a broken machine.",
+          "feedbackWrong": "The branch is fine; it simply does not contain main's newer commits yet."
+        },
+        {
+          "prompt": "Ana added a tax line on main. If you push your branch, what happens to that line?",
+          "choices": ["It gets copied into your branch", "Nothing: a push does not fetch Ana's work, so your draft can still be missing the tax line", "It gets deleted"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. A push sends your commits out, but it does not bring main's new commits in.",
+          "feedbackWrong": "A push goes in the wrong direction for Ana's tax line: it does not copy it in and, of course, it does not delete it either."
+        },
+        {
+          "prompt": "If you do not bring main into your branch and keep working, what can happen later?",
+          "choices": ["Nothing: branches update themselves", "Your draft drifts further from main, and combining them later gets harder", "main gets deleted automatically"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. The more time passes, the more differences pile up between your branch and main.",
+          "feedbackWrong": "Branches do not update themselves and main is not deleted: the risk is that your draft drifts further away."
+        },
+        {
+          "prompt": "How is bringing main into your branch different from the pull in the project copies lesson?",
+          "choices": ["They are exactly the same", "The pull updated your copy of main; here you combine main with your draft", "Bringing main in deletes your dessert commits"],
+          "correct": 1,
+          "feedbackCorrect": "Right. Both bring in new work, but here the goal is for your draft to include the latest main.",
+          "feedbackWrong": "They are not the same, and nothing is deleted: here you combine the latest main with your draft, without losing the dessert."
+        },
+        {
+          "prompt": "After main is brought into your branch, what happens to the dessert work?",
+          "choices": ["It is thrown away", "It stays and now sits alongside the tax line", "It becomes the published menu immediately"],
+          "correct": 1,
+          "feedbackCorrect": "Exactly. Your commits remain and, in addition, main's commits join them on the branch.",
+          "feedbackWrong": "The update combines your draft with main; therefore, it neither deletes your dessert nor publishes it by itself."
+        }
+      ]
+    },
+    "conflict": {
+      "title": "Two people edited the same thing",
+      "summary": "A **conflict** is a decision about one spot in a file.",
+      "deepBackground": [
+        "Sometimes two people change the same sentence. Git can easily combine work that touches different places; however, it cannot know which sentence the team actually wants when both versions claim the same spot.",
+        "That pause is a conflict. The words are not gone: on the contrary, Git holds on to both versions so that a person can choose. That is why the agent should record your choice instead of guessing it."
+      ],
+      "narrowBackground": [
+        "You wrote Saturday and Ana wrote Sunday, so the menu needs one decision: Saturday, Sunday, or a sentence that combines both days, if that is what the team means. Moreover, after you choose, the branch still has to be sent so that the team copy gets the decision."
+      ],
+      "intuition": {
+        "paragraphs": [
+          "Think of one line on the menu with two sticky notes: yours says Saturday and Ana's says Sunday. In that sense, the conflict warning is the menu asking you which note to keep.",
+          "A combined line is fine as long as it reflects the real decision, such as serving the dish on both days. What is not fine is guessing. So, you choose first, and then the agent writes that choice down."
+        ],
+        "scene": "conflict",
+        "sceneLabels": {
+          "you": "Your sentence",
+          "youBody": "We serve it on Saturday.",
+          "ana": "Ana's sentence",
+          "anaBody": "We serve it on Sunday."
+        }
+      },
+      "practice": {
+        "kind": "conflict",
+        "intro": "The same sentence was edited twice. First, pick the words the menu should keep; then, tell the agent to record that choice.",
+        "prompt": "Which sentence should the menu keep?",
+        "options": [
+          { "id": "sat", "label": "We serve it on Saturday." },
+          { "id": "sun", "label": "We serve it on Sunday." },
+          { "id": "both", "label": "We serve it on Saturday and Sunday." }
+        ],
+        "chosen": "That sentence is your decision. Now, ask the agent to record it.",
+        "thenAsk": "What do you tell the agent?",
+        "choices": [
+          { "id": "record", "label": "Record the sentence I chose and finish the merge" },
+          { "id": "guess", "label": "Pick whichever sentence you want" },
+          { "id": "delete", "label": "Delete the whole menu" }
+        ],
+        "correct": "record",
+        "wrong": "Do not let the agent guess and, above all, do not delete the menu. Instead, ask it to record the sentence you chose.",
+        "needSentence": "Choose a sentence first; any of the three can be the team's decision.",
+        "success": "The choice is recorded! Now, send the branch again so that the team copy gets that sentence."
+      },
+      "commands": [
+        {
+          "command": "git add menu.md",
+          "gloss": "Marks the sentence you chose as the resolved version of the menu."
+        },
+        {
+          "command": "git commit -m \"Choose the serving day\"",
+          "gloss": "Saves the decision on your branch."
+        },
+        {
+          "command": "git push",
+          "gloss": "Sends the branch so that the team copy receives the choice."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "A conflict warning means that...",
+          "choices": ["The project was deleted", "You and Ana edited the same spot, and a person needs to choose the words", "The agent failed and the file is gone"],
+          "correct": 1,
+          "feedbackCorrect": "Right. A conflict is a decision point, so the file is waiting for a person to decide.",
+          "feedbackWrong": "Nothing was deleted; in fact, both versions are still there until you choose."
+        },
+        {
+          "prompt": "While the warning is open, what does the file contain?",
+          "choices": ["Both versions, until you choose", "Neither version", "Only the menu title, without either sentence"],
+          "correct": 0,
+          "feedbackCorrect": "Exactly. Both sentences are preserved so that you can pick one or combine them.",
+          "feedbackWrong": "The warning keeps both edits visible; in other words, it does not blank the file."
+        },
+        {
+          "prompt": "When does a conflict appear?",
+          "choices": ["When two people change different parts of the menu", "When two people change the same line in different ways", "Every time you make a commit"],
+          "correct": 1,
+          "feedbackCorrect": "Right. If the changes touch different places, Git combines them on its own; a conflict appears when they clash in the same spot.",
+          "feedbackWrong": "Git combines changes in different places on its own, and a commit does not cause conflicts: a conflict appears when two changes clash on the same line."
+        },
+        {
+          "prompt": "When is a combined sentence a good choice?",
+          "choices": ["When it reflects what the team actually decided", "Never, because conflicts forbid combining", "When you want to avoid telling the agent"],
+          "correct": 0,
+          "feedbackCorrect": "Right. Saturday and Sunday together is fine, as long as that is the real decision.",
+          "feedbackWrong": "Combining is allowed when it matches the decision. Even so, you still need to tell the agent what to record."
+        },
+        {
+          "prompt": "After you choose, why does the branch still need to be sent?",
+          "choices": ["Because the choice is only recorded on your computer until you push", "Because choosing merges into main by itself", "Because Ana can read your screen"],
+          "correct": 0,
+          "feedbackCorrect": "Exactly. Recording the choice creates a local commit, which only reaches the team once you push the branch.",
+          "feedbackWrong": "The choice does not publish itself and, besides, Ana cannot see your screen. That is why the push is what sends it."
+        }
+      ]
+    }
+  }
+}

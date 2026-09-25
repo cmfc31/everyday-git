@@ -1,0 +1,600 @@
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --bg-elev: #fffdf8;
+  --text: #1c1917;
+  --muted: #5f5a55;
+  --line: #e2dbd0;
+  --accent: #f05033;
+  --accent-text: #ffffff;
+  --good: #146b32;
+  --good-bg: #e5f5ea;
+  --bad: #8d2424;
+  --bad-bg: #fdecec;
+  --lane: #efeae2;
+  --shadow: 0 10px 30px rgb(28 36 33 / 6%);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #161311;
+  --bg-elev: #241c19;
+  --text: #f6f1ec;
+  --muted: #c4b8b0;
+  --line: #3d322e;
+  --accent: #f05033;
+  --accent-text: #ffffff;
+  --good: #8ed7a4;
+  --good-bg: #1c2a22;
+  --bad: #f0a8a8;
+  --bad-bg: #3a221e;
+  --lane: #2c2420;
+  --shadow: 0 10px 30px rgb(0 0 0 / 35%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+#app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.site-title {
+  font-family: Outfit, 'Source Sans 3', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.landing {
+  width: 100%;
+  gap: 1.75rem;
+}
+
+.landing-intro {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.landing-intro .eyebrow,
+.landing-intro .site-title,
+.landing-intro .welcome,
+.landing-intro p {
+  margin: 0;
+}
+
+.landing-intro .site-title {
+  margin-top: 0.15rem;
+}
+
+.landing-intro .welcome {
+  margin-top: 0.35rem;
+}
+
+h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.header-start {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  font-family: Outfit, 'Source Sans 3', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+.brand-mark {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+}
+
+.landing-mark {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+.header-nav,
+.header-tools {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-nav a,
+.header-nav a:visited {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+.header-nav a.router-link-active,
+.header-nav a.router-link-active:visited {
+  color: var(--accent-text);
+  background: var(--accent);
+}
+
+main {
+  width: min(52rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+main:has(.landing) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel,
+.card,
+.lane,
+.question {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.panel {
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.background-panel {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.background-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+.background-head h2,
+.background-head .hint {
+  margin: 0;
+}
+
+.background-head .hint {
+  margin-top: 0.2rem;
+}
+
+.background-body {
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.2rem 0.15rem;
+}
+
+.background-panel[data-open='false'] {
+  background: color-mix(in srgb, var(--bg-elev) 72%, var(--bg));
+}
+
+.lesson {
+  display: grid;
+}
+
+.lesson-head {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.lesson-head > * {
+  margin: 0;
+}
+
+.lesson-section {
+  margin-top: 3rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--line);
+  gap: 1.25rem;
+}
+
+.lesson-section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.lesson-section > h2::before {
+  content: '';
+  width: 0.35rem;
+  height: 1.1em;
+  flex: none;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* Inside lessons the grid gap sets the rhythm, so default margins would double it. */
+.lesson .stack > :is(p, h2, h3),
+.lesson .lane > :is(h3, p),
+.lesson .question > *,
+.lesson .commands p {
+  margin: 0;
+}
+
+.lesson .lane > h3 + p {
+  margin-top: 0.4rem;
+}
+
+.lesson .question {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.lesson .command .hint {
+  margin-top: 0.25rem;
+}
+
+.lesson > .note {
+  margin-top: 2rem;
+}
+
+.lesson-section {
+  scroll-margin-top: 6rem;
+}
+
+.lesson > .lesson-reset {
+  margin-top: 2rem;
+}
+
+.reset-confirm {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reset-confirm p {
+  margin: 0;
+}
+
+.button.danger {
+  background: var(--bad);
+  border-color: var(--bad);
+  color: var(--bg);
+}
+
+.lesson > .pager {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0;
+  font-size: 1rem;
+}
+
+.welcome {
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.term {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.actions,
+.choice-list,
+.tool-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.actions h2 {
+  margin: 0;
+}
+
+.button,
+.choice,
+.icon-button {
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.button.primary,
+.choice.primary,
+.icon-button[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.button.quiet {
+  background: transparent;
+}
+
+.choice,
+.drop-target,
+.card {
+  text-align: left;
+}
+
+.choice {
+  border-radius: 14px;
+  width: 100%;
+}
+
+.choice.good,
+.card.good,
+.note.good {
+  background: var(--good-bg);
+  border-color: var(--good);
+}
+
+.choice.bad,
+.note.bad {
+  background: var(--bad-bg);
+  border-color: var(--bad);
+}
+
+.note {
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+}
+
+.lanes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.lane {
+  background: var(--lane);
+  padding: 0.9rem;
+  min-height: 9rem;
+}
+
+.lane.over {
+  outline: 2px solid var(--accent);
+}
+
+.card {
+  padding: 0.75rem 0.85rem;
+  cursor: grab;
+  margin-top: 0.55rem;
+}
+
+.card strong,
+.card span {
+  display: block;
+}
+
+.card span,
+.hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 0.7rem 0.8rem;
+}
+
+textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.lesson-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem 1.1rem;
+}
+
+.lesson-list a > span:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lesson-list a:hover {
+  border-color: var(--accent);
+}
+
+.check {
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  flex: none;
+  border-radius: 999px;
+  background: var(--good);
+  color: var(--bg);
+}
+
+.check svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.command-drawer {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.command-drawer > .button {
+  justify-self: start;
+}
+
+.commands {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.command {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.command code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.92rem;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  .app-header,
+  .lanes,
+  .command,
+  .lesson-list a,
+  .pager {
+    display: grid;
+  }
+
+  .app-header {
+    justify-content: stretch;
+  }
+}

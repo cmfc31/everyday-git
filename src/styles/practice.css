@@ -1,0 +1,1377 @@
+/* Visual language for the "Try it" sections: places, branch graphs, steps, and draggable chips. */
+
+:root[data-theme='light'] {
+  --lane-main: #e8452a;
+  --lane-branch: #7c3aed;
+  --remote: #0969da;
+  --remote-bg: #edf4fd;
+  --remote-line: #c3d9f5;
+  --theirs: #0969da;
+  --theirs-bg: #e6f0fc;
+}
+
+:root[data-theme='dark'] {
+  --lane-main: #f26b4f;
+  --lane-branch: #b395ff;
+  --remote: #6cb0ff;
+  --remote-bg: #172230;
+  --remote-line: #29405a;
+  --theirs: #6cb0ff;
+  --theirs-bg: #16263a;
+}
+
+.practice {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.practice > p,
+.practice .step-body > p {
+  margin: 0;
+}
+
+/* Places: your computer vs. the team's copy on GitHub */
+
+.places {
+  display: grid;
+  gap: 0;
+}
+
+.place {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-elev);
+  overflow: hidden;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.place-remote {
+  background: var(--remote-bg);
+  border-color: var(--remote-line);
+}
+
+.place.droppable {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+}
+
+.place.over {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.place-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.place-remote .place-head {
+  border-bottom-color: var(--remote-line);
+}
+
+.place-icon {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: none;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  color: var(--text);
+}
+
+.place-remote .place-icon {
+  background: color-mix(in srgb, var(--remote) 18%, transparent);
+  color: var(--remote);
+}
+
+.place-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.place-title {
+  display: grid;
+  line-height: 1.25;
+  flex: 1;
+  min-width: 0;
+}
+
+.place-title .hint {
+  font-size: 0.85rem;
+}
+
+.place-body {
+  display: grid;
+  gap: 0.9rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.file-line {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.place-remote .file-line {
+  border-color: var(--remote-line);
+}
+
+.file-line .hint {
+  font-size: 0.8rem;
+}
+
+.file-line.flash {
+  animation: flash-good 1.4s ease-out;
+}
+
+.drop-zone {
+  margin: 0;
+  padding: 0.65rem;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Transfer between places */
+
+.transfer {
+  display: grid;
+  justify-items: center;
+  padding: 0.2rem 0;
+  color: var(--muted);
+}
+
+.transfer-line {
+  position: relative;
+  width: 2px;
+  height: 1.1rem;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.transfer-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.85rem;
+}
+
+.transfer-label svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.transfer-label code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+}
+
+.transfer.active {
+  color: var(--good);
+}
+
+.transfer.active .transfer-line {
+  background: var(--good);
+}
+
+.transfer.active .transfer-label {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.transfer-packet {
+  position: absolute;
+  left: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--good);
+  opacity: 0;
+}
+
+.transfer.active.transfer-down .transfer-packet {
+  animation: packet-down 0.9s ease-in-out 2;
+}
+
+.transfer.active.transfer-up .transfer-packet {
+  animation: packet-up 0.9s ease-in-out 2;
+}
+
+/* Branch graph */
+
+.graph {
+  --row: 4.1rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(var(--rows), var(--row));
+  column-gap: 0.75rem;
+}
+
+.graph-lines {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.graph-line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.line-main {
+  stroke: var(--lane-main);
+}
+
+.line-branch {
+  stroke: var(--lane-branch);
+  animation: draw-in 0.6s ease-out;
+}
+
+.graph-link {
+  stroke-dasharray: 6 5;
+  animation: draw-in 0.6s ease-out;
+}
+
+.link-merge {
+  stroke: var(--lane-main);
+}
+
+.link-pr {
+  stroke: var(--good);
+}
+
+.link-bad {
+  stroke: var(--bad);
+}
+
+.graph-label {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+}
+
+.branch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem 0.2rem 0.45rem;
+  border-radius: 999px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.branch-pill svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.pill-main {
+  color: var(--lane-main);
+  background: color-mix(in srgb, var(--lane-main) 14%, transparent);
+}
+
+.pill-branch {
+  color: var(--lane-branch);
+  background: color-mix(in srgb, var(--lane-branch) 16%, transparent);
+  animation: pop-in 0.35s ease-out;
+}
+
+.graph-track {
+  grid-column: 2;
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  outline: none;
+  transition: background 0.15s;
+}
+
+.graph-track.droppable {
+  cursor: pointer;
+  background: color-mix(in srgb, var(--text) 3%, transparent);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--text) 14%, transparent);
+  animation: lane-pulse 1.8s ease-in-out infinite;
+}
+
+.graph-track.droppable:hover,
+.graph-track.droppable:focus-visible,
+.graph-track.over {
+  animation: none;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 999px;
+  border: 3px solid var(--bg-elev);
+  transform: translate(-50%, -50%);
+}
+
+.place-remote .dot {
+  border-color: var(--remote-bg);
+}
+
+.dot-main {
+  background: var(--lane-main);
+}
+
+.dot-branch {
+  background: var(--lane-branch);
+}
+
+.dot-new {
+  animation: pop-in 0.45s cubic-bezier(0.3, 1.6, 0.6, 1);
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 0%, transparent);
+}
+
+.dot-main.dot-new {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--lane-main) 25%, transparent);
+}
+
+.dot-branch.dot-new {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--lane-branch) 25%, transparent);
+}
+
+.dot-ghost {
+  background: var(--bg-elev);
+  border: 2px dashed var(--muted);
+}
+
+.dot-bad {
+  background: var(--bad);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--bad) 25%, transparent);
+  animation: shake 0.4s ease-in-out;
+}
+
+.dot-merge {
+  box-shadow:
+    0 0 0 3px var(--bg-elev),
+    0 0 0 5px var(--lane-main);
+  animation: pop-in 0.45s cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.dot-label {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* main is always the top lane: labeling above keeps fork curves below from crossing the text. */
+.track-main .dot-label,
+.dot.flip .dot-label {
+  top: auto;
+  bottom: calc(100% + 0.25rem);
+}
+
+.track-main .dot.flip .dot-label,
+.dot-merge.flip .dot-label {
+  top: calc(100% + 0.25rem);
+  bottom: auto;
+}
+
+.dot-bad .dot-label {
+  color: var(--bad);
+  font-weight: 600;
+}
+
+.dot-new .dot-label,
+.dot-merge .dot-label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.drop-hint,
+.lane-badge {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.drop-hint {
+  padding: 0 0.35rem;
+  border-radius: 6px;
+  background: var(--bg-elev);
+  color: var(--muted);
+}
+
+.lane-badge {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--bad-bg);
+  color: var(--bad);
+  font-weight: 600;
+}
+
+.graph-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.graph-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+}
+
+.swatch-main {
+  background: var(--lane-main);
+}
+
+.swatch-branch {
+  background: var(--lane-branch);
+}
+
+/* Steps */
+
+.step {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: opacity 0.2s;
+}
+
+.step-active {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.step-active {
+  animation: step-in 0.35s ease-out;
+}
+
+.step.collapsed {
+  padding: 0.6rem 1.1rem;
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.step.collapsed .step-head h3 {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.step.collapsed .step-num {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.step-summary {
+  margin-left: auto;
+  min-width: 0;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: var(--good);
+}
+
+.drag-instruction {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.8rem;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.drag-instruction p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 14rem;
+  margin: 0;
+}
+
+.drag-instruction svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: none;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: nudge-up 1.4s ease-in-out infinite;
+}
+
+.drag-instruction svg.nudge-down {
+  animation-name: nudge-down;
+}
+
+.drag-instruction svg.nudge-tap {
+  animation-name: tap-pulse;
+}
+
+.drag-instruction svg.nudge-type {
+  animation: none;
+}
+
+.step-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.step-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.step-num {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: none;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.step-active .step-num {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.step-done .step-num {
+  border-color: var(--good);
+  background: var(--good);
+  color: var(--bg);
+}
+
+.step-num svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.step-body {
+  display: grid;
+  gap: 0.8rem;
+}
+
+/* Draggable chips */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem 0.5rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  cursor: grab;
+  user-select: none;
+  transition:
+    transform 0.15s,
+    border-color 0.15s;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.chip:active {
+  cursor: grabbing;
+}
+
+.chip-icon {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: none;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent);
+}
+
+.chip-branch .chip-icon {
+  background: color-mix(in srgb, var(--lane-branch) 16%, transparent);
+  color: var(--lane-branch);
+}
+
+.chip-file .chip-icon {
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  color: var(--text);
+}
+
+.chip-icon svg,
+.chip-grip svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chip-grip {
+  color: var(--muted);
+}
+
+.chip-grip svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.chip-text {
+  display: grid;
+  line-height: 1.25;
+}
+
+.chip-text > span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.chip.placed {
+  cursor: default;
+  box-shadow: none;
+}
+
+.chip.placed:hover {
+  transform: none;
+  border-color: var(--line);
+}
+
+.chip.placed .chip-grip {
+  display: none;
+}
+
+/* Commit: working files and snapshot */
+
+.commit-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.zone {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  min-height: 9rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.zone h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.zone.over {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+}
+
+.zone.snapshot {
+  position: relative;
+  border: 2px dashed color-mix(in srgb, var(--accent) 55%, var(--line));
+}
+
+.zone.snapshot.over {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+}
+
+.zone.snapshot.sealed {
+  border-style: solid;
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.file-item {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.file-item .chip {
+  width: 100%;
+}
+
+.button.small {
+  justify-self: start;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+.diff {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+}
+
+.diff del {
+  color: var(--bad);
+}
+
+.diff ins {
+  color: var(--good);
+  text-decoration: none;
+}
+
+.commit-input {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.commit-input code {
+  display: flex;
+  align-items: center;
+  padding: 0 0.7rem;
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+  color: var(--muted);
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.commit-input input {
+  border: 0;
+  border-radius: 0;
+}
+
+/* Pull request and review (GitHub-like cards) */
+
+.gh-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-elev);
+  overflow: hidden;
+}
+
+.gh-head {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--remote) 7%, var(--bg-elev));
+}
+
+.gh-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.gh-title strong {
+  font-size: 1.05rem;
+}
+
+.gh-title svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: var(--good);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gh-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.state-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.12rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--muted) 18%, transparent);
+  color: var(--muted);
+}
+
+.state-badge.open {
+  background: var(--good);
+  color: var(--bg);
+  animation: pop-in 0.35s ease-out;
+}
+
+.state-badge.bad {
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+
+.compare {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.avatar-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.avatar-choice[aria-pressed='true'] {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: none;
+  border-radius: 999px;
+  background: var(--theirs);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.avatar.muted-avatar {
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+.avatar.you {
+  background: var(--accent);
+}
+
+.targets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.target {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  min-height: 8rem;
+  padding: 0.9rem;
+  border-radius: 14px;
+  border: 2px dashed var(--line);
+  background: var(--bg);
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.target-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.target-head svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.target:hover,
+.target.over {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+}
+
+.target.chosen {
+  border-style: solid;
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.target.danger.chosen {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+
+.target .hint {
+  font-size: 0.85rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline > li {
+  position: relative;
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0 0 1rem 0;
+}
+
+.timeline > li::before {
+  content: '';
+  position: absolute;
+  left: calc(0.95rem - 1px);
+  top: 1.9rem;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline > li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline > li:last-child::before {
+  display: none;
+}
+
+.timeline-commit {
+  align-items: center !important;
+  font-size: 0.95rem;
+}
+
+.timeline-commit .commit-mark {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: none;
+}
+
+.timeline-commit .commit-mark span {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  background: var(--lane-branch);
+  box-shadow: 0 0 0 3px var(--bg-elev);
+}
+
+.timeline-commit.fresh {
+  animation: pop-in 0.45s ease-out;
+}
+
+.timeline-commit .state-badge {
+  margin-left: auto;
+}
+
+.comment {
+  flex: 1;
+  border: 1px solid var(--theirs);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.comment-head {
+  padding: 0.4rem 0.75rem;
+  background: var(--theirs-bg);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.comment-head strong {
+  color: var(--text);
+}
+
+.comment p {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+}
+
+.timeline-slot {
+  flex: 1;
+  padding: 0.7rem;
+  border: 2px dashed color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 12px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: transparent;
+}
+
+.timeline-slot:hover,
+.timeline-slot.over {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--text);
+}
+
+.side-target {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+  padding: 0.8rem;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.side-target:hover,
+.side-target.over {
+  border-color: var(--bad);
+  color: var(--text);
+}
+
+/* Conflict editor */
+
+.editor {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.88rem;
+}
+
+.editor-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-elev);
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+.editor-bar .dots {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.editor-bar .dots span {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.editor-bar .state-badge {
+  margin-left: auto;
+}
+
+.editor-lines {
+  display: grid;
+  padding: 0.6rem 0;
+}
+
+.editor-line {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.15rem 0.9rem;
+  white-space: pre-wrap;
+}
+
+.editor-line .ln {
+  width: 1.2rem;
+  flex: none;
+  text-align: right;
+  color: var(--muted);
+  opacity: 0.6;
+  user-select: none;
+}
+
+.editor-line.marker {
+  color: var(--muted);
+}
+
+.editor-line.ours {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.editor-line.theirs {
+  background: var(--theirs-bg);
+  box-shadow: inset 3px 0 0 var(--theirs);
+}
+
+.editor-line.resolved {
+  background: var(--good-bg);
+  box-shadow: inset 3px 0 0 var(--good);
+  animation: flash-good 1.2s ease-out;
+}
+
+.editor-line .tag {
+  margin-left: auto;
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.resolve-options {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.resolve-option {
+  display: grid;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.resolve-option .tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.resolve-option.ours .tag {
+  color: var(--accent);
+}
+
+.resolve-option.theirs .tag {
+  color: var(--theirs);
+}
+
+.resolve-option.both .tag {
+  color: var(--good);
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}
+
+@keyframes nudge-up {
+  50% {
+    translate: 0 -4px;
+  }
+}
+
+@keyframes nudge-down {
+  50% {
+    translate: 0 4px;
+  }
+}
+
+@keyframes tap-pulse {
+  50% {
+    scale: 0.85;
+  }
+}
+
+@keyframes lane-pulse {
+  50% {
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+}
+
+@keyframes draw-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    translate: 0;
+  }
+  25% {
+    translate: -4px;
+  }
+  75% {
+    translate: 4px;
+  }
+}
+
+@keyframes flash-good {
+  from {
+    background: var(--good-bg);
+    border-color: var(--good);
+  }
+}
+
+@keyframes packet-down {
+  0% {
+    top: -6px;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes packet-up {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  100% {
+    top: -6px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .commit-board,
+  .targets {
+    grid-template-columns: 1fr;
+  }
+
+  /* Narrow screens: the branch name becomes a tag over its lane, so the track gets the full width. */
+  .graph {
+    --row: 4.6rem;
+    grid-template-columns: 1fr;
+  }
+
+  .graph-lines,
+  .graph-track,
+  .graph-label {
+    grid-column: 1;
+  }
+
+  .graph-label {
+    align-items: flex-start;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .branch-pill {
+    font-size: 0.72rem;
+    background-color: var(--bg-elev);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 30%, transparent);
+  }
+
+  .place-remote .branch-pill {
+    background-color: var(--remote-bg);
+  }
+
+  .drop-hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice *,
+  .practice *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
