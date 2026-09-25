@@ -5,7 +5,7 @@
     "lessons": "Lecciones",
     "useLight": "Tema claro",
     "useDark": "Tema oscuro",
-    "showCommands": "Ver comandos",
+    "showCommands": "¡Muéstrame el código!",
     "hideCommands": "Ocultar comandos",
     "commandNote": "Estos son los comandos que ejecutaría tu agente. Sin embargo, no los necesitas para terminar la lección.",
     "copy": "Copiar",
