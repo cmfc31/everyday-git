@@ -328,7 +328,7 @@
       "deepBackground": [
         "**Git** is the program that keeps the weekend menu's history: what changed, who did it, and when. It is not a website, though. **GitHub**, on the other hand, is the website where the team keeps its copy of that history. Thanks to that, several people can look at the same menu, even though each person also has their own copy on their computer.",
         "Within that history, **main** is the published menu. Consequently, if you edit it directly, customers would see a dessert whose recipe is not finished yet.",
-        "To avoid that, you can create a **branch**: a draft with a custom name of your choice, based on that same menu. You can try the change there, while **main** stays the same until the team accepts the draft and **merges** it into main, that is, until it adds those changes to the published menu. What is more, there can be more than one branch at a time: for example, one for the dessert and another for the prices, and each one moves forward on its own, without affecting the others. Finally, at first the branch exists only on your computer, so no one on the team can see it until you decide to share it."
+        "To avoid that, you can create a **branch**: a draft with a custom name of your choice, based on the original menu. You can try the change there, while **main** stays the same until the team accepts the draft and **merges** it into main, that is, until it adds those changes to the published menu. What is more, there can be more than one branch at a time: for example, one for the dessert and another for the prices, and each one moves forward on its own, without affecting the others. Finally, at first the branch exists only on your computer, so no one on the team can see it until you decide to share it."
       ],
       "narrowBackground": [
         "The new dessert's recipe is not finished yet, so it cannot go on the menu customers see. For that reason, start a **branch** before you edit, and keep the recipe there. In this story, that branch is called weekend-special."
@@ -384,7 +384,7 @@
         },
         {
           "prompt": "What is a branch?",
-          "choices": ["A copy of Ana's computer", "A draft with a custom name, based on the same menu", "The website where the team keeps the history"],
+          "choices": ["A copy of Ana's computer", "A draft with a custom name, based on the original menu", "The website where the team keeps the history"],
           "correct": 1,
           "feedbackCorrect": "Exactly. A branch is a draft with a custom name; the website where the team keeps the history, on the other hand, is GitHub.",
           "feedbackWrong": "A branch is not anyone's computer, nor a website: it is a draft with a custom name inside the menu's history."

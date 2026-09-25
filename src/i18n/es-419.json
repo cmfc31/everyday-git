@@ -328,7 +328,7 @@
       "deepBackground": [
         "**Git** es el programa que guarda el historial del menú de fin de semana: qué cambió, quién lo hizo y cuándo. Sin embargo, no es un sitio web. **GitHub**, en cambio, es el sitio en internet donde el equipo guarda su copia de ese historial. Gracias a eso, varias personas pueden ver el mismo menú, aunque cada una también tenga su propia copia en su computadora.",
         "Dentro de ese historial, **main** es el menú ya publicado. Por lo tanto, si lo editas directamente, los clientes verían un postre cuya receta todavía no está terminada.",
-        "Para evitar eso, puedes crear una **rama**: un borrador con un nombre personalizado de tu elección, que tiene como base ese mismo menú. En ella puedes probar el cambio, mientras **main** se mantiene igual hasta que el equipo acepte el borrador y lo **fusione** con main, es decir, hasta que sume sus cambios al menú publicado. Además, puede haber más de una rama al mismo tiempo: por ejemplo, una para el postre y otra para los precios, y cada una avanza por separado, sin afectar a las demás. Por último, al principio la rama existe solo en tu computadora, así que nadie del equipo la ve hasta que decidas compartirla."
+        "Para evitar eso, puedes crear una **rama**: un borrador con un nombre personalizado de tu elección, que tiene como base el menú original. En ella puedes probar el cambio, mientras **main** se mantiene igual hasta que el equipo acepte el borrador y lo **fusione** con main, es decir, hasta que sume sus cambios al menú publicado. Además, puede haber más de una rama al mismo tiempo: por ejemplo, una para el postre y otra para los precios, y cada una avanza por separado, sin afectar a las demás. Por último, al principio la rama existe solo en tu computadora, así que nadie del equipo la ve hasta que decidas compartirla."
       ],
       "narrowBackground": [
         "La receta del postre nuevo todavía no está terminada, así que no puede entrar en el menú que ven los clientes. Por eso, antes de editar, empieza una **rama** y guarda ahí la receta. En esta historia, esa rama se llama weekend-special."
@@ -384,7 +384,7 @@
         },
         {
           "prompt": "¿Qué es una rama?",
-          "choices": ["Una copia de la computadora de Ana", "Un borrador con un nombre personalizado, basado en el mismo menú", "El sitio web donde el equipo guarda el historial"],
+          "choices": ["Una copia de la computadora de Ana", "Un borrador con un nombre personalizado, basado en el menú original", "El sitio web donde el equipo guarda el historial"],
           "correct": 1,
           "feedbackCorrect": "Exacto. Una rama es un borrador con un nombre personalizado; en cambio, el sitio web donde el equipo guarda el historial es GitHub.",
           "feedbackWrong": "Una rama no es la computadora de nadie ni un sitio web: es un borrador con un nombre personalizado dentro del historial del menú."
