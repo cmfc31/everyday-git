@@ -1,58 +1,58 @@
 # Everyday Git
 
-Guía interactiva para quienes empiezan a trabajar con Git y GitHub. El sitio enseña GitHub Flow: una rama principal, ramas cortas y un pull request para que alguien del equipo revise el cambio.
+An interactive guide for people who are starting to work with Git and GitHub. The site teaches GitHub Flow: one main branch, short branches, and a pull request so a teammate can review the change.
 
-No hace falta escribir comandos. En cada lección aparece una situación de trabajo y la persona decide qué pedirle a su agente de IA. Los comandos reales quedan ocultos, detrás de un botón, por si alguien quiere verlos.
+You do not write commands. Each lesson puts you in a work situation, and you decide what to ask your AI agent. The real commands stay hidden behind a button, in case you want to see them.
 
-El sitio está en español (Latinoamérica) y en inglés, con tema claro y oscuro. El avance se guarda en el navegador.
+The site is in Latin American Spanish and English, with a light theme and a dark theme. Progress is saved in the browser.
 
-## La historia
+## The story
 
-Tú y Ana trabajan en un restaurante. El proyecto es el menú de fin de semana que ven los clientes. A lo largo de las lecciones lo modifican en equipo, pero los clientes no deberían ver un cambio que todavía no está listo.
+You and Ana work at a restaurant. The project is the weekend menu customers see. Across the lessons you change it together, but customers should not see a change that is not ready yet.
 
-## Pantallas
+## Screens
 
-### Inicio
+### Home
 
-![Página de inicio](docs/screenshots/inicio.png)
+![Home page](docs/screenshots/inicio.png)
 
-### Recorrido
+### The path
 
-![Lista de las ocho lecciones](docs/screenshots/lecciones.png)
+![List of the eight lessons](docs/screenshots/lecciones.png)
 
-### Una lección
+### A lesson
 
-Cada lección tiene cuatro partes: un contexto que se puede saltar, la idea de esa lección, una escena para practicar y un quiz de cinco preguntas. La lección queda completa cuando se termina la práctica y se responden bien las cinco.
+Each lesson has four parts: a background you can skip, the idea for that lesson, a scene to practice, and a five-question quiz. The lesson is complete when you finish the practice and answer all five correctly.
 
-![Lección 1, un borrador del menú](docs/screenshots/leccion.png)
+![Lesson 1, a draft of the menu](docs/screenshots/leccion.png)
 
-![Práctica de la lección 1](docs/screenshots/practica.png)
+![Practice in lesson 1](docs/screenshots/practica.png)
 
-## Lecciones
+## Lessons
 
-1. **Un borrador del menú.** Una rama es un borrador con nombre. `main` sigue siendo el menú que ven los clientes.
-2. **Copias del proyecto y el pull.** Un pull trae a tu computadora lo que el equipo ya tiene.
-3. **Guardar un cambio.** Un commit es una foto con nombre de los archivos que eliges.
-4. **Enviar tu trabajo.** Un push comparte tu rama, pero no la fusiona.
-5. **Pedir que se fusione el cambio.** Un pull request es una conversación, no una sobrescritura.
-6. **El día de la revisión.** Los comentarios se responden en la misma solicitud.
-7. **Alguien movió main.** Si main avanzó, incorpóralo a tu rama antes de seguir.
-8. **Dos personas editaron lo mismo.** Un conflicto es una decisión sobre un solo lugar del archivo.
+1. **A draft of the menu.** A branch is a named draft. `main` stays the menu customers see.
+2. **Project copies and pull.** A pull brings onto your computer what the team already has.
+3. **Saving a change.** A commit is a named snapshot of the files you choose.
+4. **Sending your work.** A push shares your branch, but it does not merge it.
+5. **Asking to merge.** A pull request is a conversation, not an overwrite.
+6. **Review day.** Comments are answered on the same request.
+7. **Someone else moved main.** If main moved ahead, bring it into your branch before you continue.
+8. **Two people edited the same thing.** A conflict is a decision about one spot in a file.
 
-## Desarrollo
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-La app queda en `http://127.0.0.1:5173/everyday-git/`.
+The app is served at `http://127.0.0.1:5173/everyday-git/`.
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Publicación
+## Publishing
 
-El flujo de GitHub Pages está en `.github/workflows/pages.yml`. Se publica al hacer push a `main` o `master`. La base del sitio es `/everyday-git/`, así que el repositorio debe llamarse `everyday-git`.
+The GitHub Pages workflow is in `.github/workflows/pages.yml`. It publishes on a push to `main` or `master`. The site base path is `/everyday-git/`, so the repository must be named `everyday-git`.
